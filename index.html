@@ -166,7 +166,6 @@
       <li><a href="#" onclick="showSection('home')">Home</a></li>
       <li><a href="#" onclick="showSection('story')">Our Story</a></li>
       <li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
-      <li><a href="#" onclick="showSection('rsvp')">RSVP</a></li>
     </ul>
   </nav>
 
@@ -186,10 +185,8 @@
       <h2>Gallery</h2>
       <p>Enjoy some of our favorite memories together...</p>
       <div class="photo-grid">
-        <!-- Make sure your image files are uploaded to the images/ folder -->
         <img src="images/4bcbf48d-af29-4a32-b2e8-8753c1a9c053.png" alt="photo1">
         <img src="images/1e0a9a81-f60b-41f4-ac64-24f0cc37b3c2.png" alt="photo2">
-        <!-- Add more images here -->
       </div>
     </section>
 
@@ -213,7 +210,7 @@
       document.getElementById(sectionId).classList.add('active');
 
       const nav = document.getElementById('navLinks');
-      nav.classList.remove('active'); // hide menu on mobile
+      nav.classList.remove('active');
     }
   </script>
 </body>
