@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan & Kenzy's Big Day!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1F4E47;
+      color: #F5EFE6;
+    }
+
+    .main-hero {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: url('images/banner-photo.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay-text {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .overlay-text h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #fff;
+    }
+
+    .overlay-text p {
+      font-size: 1.5em;
+      color: #ddd;
+    }
+
+    nav {
+      background-color: #F5EFE6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #1F4E47;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul.nav-links li {
+      margin-left: 1rem;
+    }
+
+    ul.nav-links li a {
+      text-decoration: none;
+      color: #1F4E47;
+      font-weight: bold;
+    }
+
+    .content-section {
+      padding: 2rem;
+      display: none;
+      background-color: #2F5E55;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #D2691E;
+    }
+
+    a {
+      color: #C9A96E;
+    }
+
+    iframe {
+      width: 100%;
+      height: 950px;
+      border: none;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      ul.nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-hero">
+    <div class="overlay-text">
+      <h1>Dan & Kenzy's Big Day</h1>
+      <p>October 11, 2025 • We're getting married!</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('story')">Our Story</a></li>
+      <li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
+      <li><a href="#" onclick="showSection('rsvp')">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="content-section active">
+      <h2>Welcome!</h2>
+      <p>We’re so excited to celebrate our love with all of you! Click around to learn more about us and our big day. 💕</p>
+    </section>
+
+    <section id="story" class="content-section">
+      <h2>Our Story</h2>
+      <p>From the moment we met, we knew we were meant to be. From silly moments to big milestones, every step together has been filled with love, laughter, and support.</p>
+    </section>
+
+    <section id="gallery" class="content-section">
+      <h2>Gallery</h2>
+      <p>Enjoy some of our favorite memories together...</p>
+      <div class="photo-grid">
+        <img src="images/4bcbf48d-af29-4a32-b2e8-8753c1a9c053.png" alt="photo1">
+        <img src="images/1e0a9a81-f60b-41f4-ac64-24f0cc37b3c2.png" alt="photo2">
+        <img src="images/8749cc69-04a1-4c29-a156-c68ff73a2532.png" alt="photo3">
+        <img src="images/cd1c6c8a-359a-4e25-b8cd-3f81311d04aa.png" alt="photo4">
+        <img src="images/0bcde01a-ec4c-435f-92b1-4f05a23eb795.png" alt="photo5">
+        <img src="images/55eec4a0-dca9-44f0-9a11-851e04bb3311.png" alt="photo6">
+        <img src="images/d13dcc63-55c6-4be3-a4e9-4723afe09cca.png" alt="photo7">
+        <img src="images/6076129a-6141-4ae8-9819-a806a21bbe3e.png" alt="photo8">
+        <img src="images/2d976f2a-042c-42e9-b9f5-9a82f83e0477.png" alt="photo9">
+        <img src="images/0ceaf4e9-851a-46ed-91ed-0923837c1849.png" alt="photo10">
+        <img src="images/0662f1e6-a2d3-46b9-a9b9-c5961b42e72d.png" alt="photo11">
+        <img src="images/4f241a42-19b8-4c8f-9980-49391ace0a23.png" alt="photo12">
+        <img src="images/c02fa67e-22d2-4091-b405-a5a4f68d7caa.png" alt="photo13">
+        <img src="images/2160aaf0-8a69-4ef0-bd6f-9a472629a68f.png" alt="photo14">
+        <img src="images/b7b93514-ef01-4e04-8bc3-cc6f57d4b778.png" alt="photo15">
+        <img src="images/d1f03eb2-3572-453c-9576-8f47ede43cc7.png" alt="photo16">
+        <img src="images/738105bf-3c38-4039-8156-29d08c18453b.png" alt="photo17">
+      </div>
+    </section>
+
+    <section id="rsvp" class="content-section">
+      <h2>RSVP</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true">Loading…</iframe>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+
+      const nav = document.getElementById('navLinks');
+      nav.classList.remove('active');
+    }
+  </script>
+</body>
+</html>
