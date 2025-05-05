@@ -12,45 +12,10 @@
       color: #F5EFE6;
     }
 
-    .main-hero {
-      position: relative;
+    .banner {
       width: 100%;
-      height: 400px;
+      height: 300px;
       background: url('images/banner-photo.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .overlay-text {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px;
-      border-radius: 10px;
-    }
-
-    .overlay-text h1 {
-      font-size: 3em;
-      margin: 0;
-      color: #fff;
-    }
-
-    .overlay-text p {
-      font-size: 1.5em;
-      color: #ddd;
-    }
-
-    .rsvp-button {
-      display: inline-block;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      background-color: #C9A96E;
-      color: #1F4E47;
-      font-size: 1.2em;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      text-align: center;
     }
 
     nav {
@@ -93,29 +58,22 @@
 
     .content-section {
       padding: 2rem;
-      display: none;
       background-color: #2F5E55;
       margin: 1rem;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
     }
 
-    .content-section.active {
-      display: block;
-    }
-
-    h2 {
-      color: #D2691E;
-    }
-
-    a {
-      color: #C9A96E;
-    }
-
-    iframe {
-      width: 100%;
-      height: 950px;
-      border: none;
+    .rsvp-button {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #C9A96E;
+      color: #1F4E47;
+      font-size: 1.2em;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
     }
 
     .photo-grid {
@@ -135,13 +93,11 @@
       .menu-toggle {
         display: flex;
       }
-
       ul.nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
       }
-
       ul.nav-links.active {
         display: flex;
       }
@@ -149,12 +105,7 @@
   </style>
 </head>
 <body>
-  <header class="main-hero">
-    <div class="overlay-text">
-      <h1>Dan & Kenzy's Big Day</h1>
-      <p>October 11, 2025 • We're getting married!</p>
-    </div>
-  </header>
+  <div class="banner"></div>
 
   <nav>
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -170,31 +121,36 @@
   </nav>
 
   <main>
-    <section id="home" class="content-section active">
+    <section id="home" class="content-section">
       <h2>Welcome!</h2>
-      <p>We’re so excited to celebrate our love with all of you! Click around to learn more about us and our big day. 💕</p>
+      <p>We can’t wait to celebrate with you on October 11, 2025! 💍</p>
       <a class="rsvp-button" href="#" onclick="showSection('rsvp')">RSVP Now</a>
     </section>
 
-    <section id="story" class="content-section">
+    <section id="story" class="content-section" style="display: none;">
       <h2>Our Story</h2>
-      <p>From the moment we met, we knew we were meant to be. From silly moments to big milestones, every step together has been filled with love, laughter, and support.</p>
+      <p>From our first laughs to forever — our love story has been one of joy, adventure, and growing together as a family. 💕</p>
     </section>
 
-    <section id="gallery" class="content-section">
+    <section id="gallery" class="content-section" style="display: none;">
       <h2>Gallery</h2>
-      <p>Enjoy some of our favorite memories together...</p>
       <div class="photo-grid">
+        <!-- Example: Add all gallery images from zip file -->
         <img src="images/4bcbf48d-af29-4a32-b2e8-8753c1a9c053.png" alt="photo1">
         <img src="images/1e0a9a81-f60b-41f4-ac64-24f0cc37b3c2.png" alt="photo2">
+        <img src="images/8749cc69-04a1-4c29-a156-c68ff73a2532.png" alt="photo3">
+        <img src="images/738105bf-3c38-4039-8156-29d08c18453b.png" alt="photo4">
+        <!-- Add more from zip if desired -->
       </div>
     </section>
 
-    <section id="rsvp" class="content-section">
+    <section id="rsvp" class="content-section" style="display: none;">
       <h2>RSVP</h2>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true">Loading…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true" width="100%" height="950" frameborder="0">Loading…</iframe>
     </section>
   </main>
+
+  <div class="banner"></div>
 
   <script>
     function toggleMenu() {
@@ -202,13 +158,10 @@
       nav.classList.toggle('active');
     }
 
-    function showSection(sectionId) {
+    function showSection(id) {
       const sections = document.querySelectorAll('.content-section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-
+      sections.forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
       const nav = document.getElementById('navLinks');
       nav.classList.remove('active');
     }
