@@ -12,7 +12,7 @@
       color: #F5EFE6;
     }
     header {
-      background: url('A_marbled_abstract_digital_image_features_swirling.png') no-repeat center center/cover;
+      background: url('images/A_marbled_abstract_digital_image_features_swirling.png') no-repeat center center/cover;
       height: 300px;
       color: white;
       display: flex;
@@ -55,6 +55,7 @@
       text-decoration: none;
       color: #1F4E47;
       font-weight: bold;
+      font-size: 1.2rem;
     }
     .content-section {
       padding: 2rem;
@@ -72,6 +73,21 @@
     }
     a {
       color: #C9A96E;
+    }
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #D2691E;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .rsvp-button:hover {
+      background-color: #a85116;
     }
     iframe {
       width: 100%;
@@ -127,6 +143,7 @@
     <section id="home" class="content-section active">
       <h2>Welcome!</h2>
       <p>We’re so excited to celebrate our love with all of you! Click around to learn more about us and our big day. 💕</p>
+      <a href="#" class="rsvp-button" onclick="showSection('rsvp')">RSVP Now</a>
     </section>
 
     <section id="story" class="content-section">
@@ -138,23 +155,24 @@
       <h2>Gallery</h2>
       <p>Enjoy some of our favorite memories together...</p>
       <div class="photo-grid">
-        <img src="/mnt/data/4bcbf48d-af29-4a32-b2e8-8753c1a9c053.png" alt="photo1">
-        <img src="/mnt/data/1e0a9a81-f60b-41f4-ac64-24f0cc37b3c2.png" alt="photo2">
-        <img src="/mnt/data/8749cc69-04a1-4c29-a156-c68ff73a2532.png" alt="photo3">
-        <img src="/mnt/data/cd1c6c8a-359a-4e25-b8cd-3f81311d04aa.png" alt="photo4">
-        <img src="/mnt/data/0bcde01a-ec4c-435f-92b1-4f05a23eb795.png" alt="photo5">
-        <img src="/mnt/data/55eec4a0-dca9-44f0-9a11-851e04bb3311.png" alt="photo6">
-        <img src="/mnt/data/d13dcc63-55c6-4be3-a4e9-4723afe09cca.png" alt="photo7">
-        <img src="/mnt/data/6076129a-6141-4ae8-9819-a806a21bbe3e.png" alt="photo8">
-        <img src="/mnt/data/2d976f2a-042c-42e9-b9f5-9a82f83e0477.png" alt="photo9">
-        <img src="/mnt/data/0ceaf4e9-851a-46ed-91ed-0923837c1849.png" alt="photo10">
-        <img src="/mnt/data/0662f1e6-a2d3-46b9-a9b9-c5961b42e72d.png" alt="photo11">
-        <img src="/mnt/data/4f241a42-19b8-4c8f-9980-49391ace0a23.png" alt="photo12">
-        <img src="/mnt/data/c02fa67e-22d2-4091-b405-a5a4f68d7caa.png" alt="photo13">
-        <img src="/mnt/data/2160aaf0-8a69-4ef0-bd6f-9a472629a68f.png" alt="photo14">
-        <img src="/mnt/data/b7b93514-ef01-4e04-8bc3-cc6f57d4b778.png" alt="photo15">
-        <img src="/mnt/data/d1f03eb2-3572-453c-9576-8f47ede43cc7.png" alt="photo16">
-        <img src="/mnt/data/738105bf-3c38-4039-8156-29d08c18453b.png" alt="photo17">
+        <!-- Your <img src="images/filename.png"> tags will go here -->
+        <img src="images/4bcbf48d-af29-4a32-b2e8-8753c1a9c053.png" alt="photo1">
+        <img src="images/1e0a9a81-f60b-41f4-ac64-24f0cc37b3c2.png" alt="photo2">
+        <img src="images/8749cc69-04a1-4c29-a156-c68ff73a2532.png" alt="photo3">
+        <img src="images/cd1c6c8a-359a-4e25-b8cd-3f81311d04aa.png" alt="photo4">
+        <img src="images/0bcde01a-ec4c-435f-92b1-4f05a23eb795.png" alt="photo5">
+        <img src="images/55eec4a0-dca9-44f0-9a11-851e04bb3311.png" alt="photo6">
+        <img src="images/d13dcc63-55c6-4be3-a4e9-4723afe09cca.png" alt="photo7">
+        <img src="images/6076129a-6141-4ae8-9819-a806a21bbe3e.png" alt="photo8">
+        <img src="images/2d976f2a-042c-42e9-b9f5-9a82f83e0477.png" alt="photo9">
+        <img src="images/0ceaf4e9-851a-46ed-91ed-0923837c1849.png" alt="photo10">
+        <img src="images/0662f1e6-a2d3-46b9-a9b9-c5961b42e72d.png" alt="photo11">
+        <img src="images/4f241a42-19b8-4c8f-9980-49391ace0a23.png" alt="photo12">
+        <img src="images/c02fa67e-22d2-4091-b405-a5a4f68d7caa.png" alt="photo13">
+        <img src="images/2160aaf0-8a69-4ef0-bd6f-9a472629a68f.png" alt="photo14">
+        <img src="images/b7b93514-ef01-4e04-8bc3-cc6f57d4b778.png" alt="photo15">
+        <img src="images/d1f03eb2-3572-453c-9576-8f47ede43cc7.png" alt="photo16">
+        <img src="images/738105bf-3c38-4039-8156-29d08c18453b.png" alt="photo17">
       </div>
     </section>
 
@@ -178,7 +196,7 @@
       document.getElementById(sectionId).classList.add('active');
 
       const nav = document.getElementById('navLinks');
-      nav.classList.remove('active'); // hide menu on mobile
+      nav.classList.remove('active');
     }
   </script>
 </body>
