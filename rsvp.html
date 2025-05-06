@@ -10,14 +10,20 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: #1F4E47;
-      color: #F5EFE6;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      backdrop-filter: blur(6px) brightness(60%);
+      -webkit-backdrop-filter: blur(6px) brightness(60%);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2rem;
-      min-height: 100vh;
     }
+
     iframe {
       border: none;
       width: 100%;
@@ -25,11 +31,21 @@
       height: 1000px;
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      background-color: white;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 1200px;
+      }
     }
   </style>
 </head>
 <body>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true" 
-          loading="lazy">Loading…</iframe>
+  <div class="overlay">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true" loading="lazy">
+      Loading…
+    </iframe>
+  </div>
 </body>
 </html>
