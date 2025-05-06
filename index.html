@@ -32,8 +32,9 @@
     nav {
       background: #F5EFE6;
       padding: 1rem;
+      position: relative;
     }
-    nav .menu {
+    .menu {
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -56,22 +57,20 @@
       margin: 4px 0;
       border-radius: 2px;
     }
+
     @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+        margin-bottom: 0.5rem;
+      }
       .menu {
         display: none;
         flex-direction: column;
+        align-items: flex-start;
         gap: 1rem;
-        margin-top: 1rem;
+        padding-left: 1rem;
       }
       .menu.active {
-        display: flex;
-      }
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .hamburger {
         display: flex;
       }
     }
@@ -167,12 +166,5 @@
   <footer>
     <p>Made with love by Daniel & Makenzie ❤️</p>
   </footer>
-
-  <script>
-    // Toggle menu open/close on mobile
-    document.querySelector('.hamburger').addEventListener('click', () => {
-      document.querySelector('.menu').classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
