@@ -31,16 +31,51 @@
     }
     nav {
       background: #F5EFE6;
+      padding: 1rem;
+    }
+    nav .menu {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem;
     }
     nav a {
       text-decoration: none;
       color: #1F4E47;
       font-weight: bold;
     }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #1F4E47;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .menu.active {
+        display: flex;
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
     section {
       max-width: 800px;
       margin: 2rem auto;
@@ -82,10 +117,17 @@
   </header>
 
   <nav>
-    <a href="#story">Our Story</a>
-    <a href="#details">Wedding Info</a>
-    <a href="#photos">Upload Photos</a>
-    <a href="#registry">Registry</a>
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a href="#story">Our Story</a>
+      <a href="#details">Wedding Info</a>
+      <a href="#photos">Upload Photos</a>
+      <a href="#registry">Registry</a>
+    </div>
   </nav>
 
   <section id="story">
@@ -125,5 +167,12 @@
   <footer>
     <p>Made with love by Daniel & Makenzie ❤️</p>
   </footer>
+
+  <script>
+    // Toggle menu open/close on mobile
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.menu').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
