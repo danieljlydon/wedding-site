@@ -103,8 +103,14 @@
 </footer>
 
   <script>
-    document.querySelector('.hamburger').addEventListener('click', () => {
-      document.querySelector('.menu').classList.toggle('active');
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      }
     });
   </script>
 
