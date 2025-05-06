@@ -24,14 +24,20 @@
       padding: 2rem;
     }
 
+    .form-wrapper {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      width: 100%;
+    }
+
     iframe {
       border: none;
       width: 100%;
-      max-width: 800px;
       height: 1000px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-      background-color: white;
+      border-radius: 8px;
     }
 
     @media (max-width: 768px) {
@@ -43,9 +49,11 @@
 </head>
 <body>
   <div class="overlay">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true" loading="lazy">
-      Loading…
-    </iframe>
+    <div class="form-wrapper">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true" loading="lazy">
+        Loading…
+      </iframe>
+    </div>
   </div>
 </body>
 </html>
