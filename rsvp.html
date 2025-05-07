@@ -54,5 +54,17 @@
       </iframe>
 </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
+</script>
 </body>
 </html>
