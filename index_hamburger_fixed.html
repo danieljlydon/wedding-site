@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel & Makenzie's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: url('bg-index.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #F5EFE6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav {
+      background: #F5EFE6;
+      padding: 1rem;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1F4E47;
+      font-weight: bold;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #1F4E47;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #F5EFE6;
+        padding: 1rem;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+      .menu.active {
+        display: flex;
+      }
+    }
+.menu { display: none; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+      .menu.active { display: flex; }
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: rgba(31, 78, 71, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #F5EFE6;
+      color: #1F4E47;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Daniel & Makenzie's Wedding</h1>
+    <p>October 11, 2025</p>
+    <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+  </header>
+  <nav>
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="details.html">Wedding Info</a>
+      <a href="photos.html">Upload Photos</a>
+      <a href="registry.html">Registry</a>
+    </div>
+  </nav>
+
+<section><h2>Welcome</h2><p>We’re so excited to celebrate with you! Use the menu to learn more and RSVP.</p></section>
+<footer>
+  <p>Made with love by Daniel & Makenzie ❤️</p>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+
+
+
+<section id="countdown-section" style="padding: 2rem 1rem;">
+  <h2 style="text-align:center; font-size: 2rem; margin-bottom: 1rem;">Countdown to I DO!! 💍</h2>
+  <div id="countdown" style="text-align: center; font-size: 2.5rem; font-weight: 500; letter-spacing: 2px; font-family: 'Playfair Display', serif;"></div>
+</section>
+<script>
+  const targetDate = new Date("October 11, 2025 14:00:00").getTime(); // 2:00 PM
+  const countdownEl = document.getElementById("countdown");
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    if (distance < 0) {
+      countdownEl.innerHTML = "🎉 It's Wedding Time! 🎉";
+      clearInterval(interval);
+      return;
+    }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((distance % (1000 * 60)) / 1000);
+    countdownEl.innerHTML = `${days}d ${hrs}h ${mins}m ${secs}s`;
+  }
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
+</script>
+
+</body>
