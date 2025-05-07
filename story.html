@@ -13,34 +13,84 @@
       background-size: cover;
       color: #F5EFE6;
     }
-    header, footer {
+    header {
       text-align: center;
+      padding: 4rem 2rem 2rem;
       background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
     }
-    .timeline {
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav {
+      background: #F5EFE6;
+      padding: 1rem;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1F4E47;
+      font-weight: bold;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #1F4E47;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #F5EFE6;
+        padding: 1rem;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+      .menu.active { display: flex; }
+    }
+    section {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem;
+      background-color: rgba(31, 78, 71, 0.85);
       border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
     }
-    .event {
-      margin-bottom: 3rem;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #F5EFE6;
+      color: #1F4E47;
     }
-    .event h3 {
-      margin-bottom: 0.5rem;
-      color: #C9A96E;
-    }
-    .event p {
-      margin-bottom: 1rem;
-    }
-    .event .photos {
+    .photos {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
+      margin-top: 1rem;
     }
-    .event .photos img {
+    .photos img {
       max-width: 100%;
       width: calc(50% - 0.5rem);
       border-radius: 8px;
@@ -52,95 +102,46 @@
   <header>
     <h1>Our Story</h1>
     <p>A timeline of love, laughter, and everything in between</p>
+    <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
   </header>
-  <div class="timeline">
-<div class='event'>
-<h3>August 1, 2023</h3>
-<p>We started talking — we hit it off instantly and stayed up all night telling stories.</p>
-</div>
-<div class='event'>
-<h3>August 6, 2023</h3>
-<p>Our first date! We laughed, took selfies, and made memories.</p>
-<div class='photos'>
-<img src='photo1.png' alt='Photo from August 6, 2023'>
-<img src='photo2.png' alt='Photo from August 6, 2023'>
-</div>
-</div>
-<div class='event'>
-<h3>August 22, 2023</h3>
-<p>We made it official! I asked her to be my girlfriend.</p>
-<div class='photos'>
-<img src='official.jpg' alt='Photo from August 22, 2023'>
-</div>
-</div>
-<div class='event'>
-<h3>November 19, 2023</h3>
-<p>Our first road trip together — we headed to Tennessee for Thanksgiving.</p>
-<div class='photos'>
-<img src='roadtrip.jpg' alt='Photo from November 19, 2023'>
-</div>
-</div>
-<div class='event'>
-<h3>December 31, 2023</h3>
-<p>Our first New Year's celebration together — ringing in 2024 side by side.</p>
-<div class='photos'>
-<img src='newyear.jpg' alt='Photo from December 31, 2023'>
-</div>
-</div>
-<div class='event'>
-<h3>August 3, 2024</h3>
-<p>She said yes! We got engaged and began planning forever.</p>
-<div class='photos'>
-<img src='engagement.jpg' alt='Photo from August 3, 2024'>
-</div>
-</div>
-<div class='event'>
-<h3>August 22, 2024</h3>
-<p>One year together and still going strong.</p>
-<div class='photos'>
-<img src='anniversary.jpg' alt='Photo from August 22, 2024'>
-</div>
-</div>
-<div class='event'>
-<h3>October 23, 2024</h3>
-<p>We went on our first hunt together — a whole new kind of adventure.</p>
-<div class='photos'>
-<img src='hunt1.jpg' alt='Photo from October 23, 2024'>
-<img src='hunt2.jpg' alt='Photo from October 23, 2024'>
-</div>
-</div>
-<div class='event'>
-<h3>November 19, 2024</h3>
-<p>We found out we’re having a baby! 💙</p>
-<div class='photos'>
-<img src='baby-news.jpg' alt='Photo from November 19, 2024'>
-</div>
-</div>
-<div class='event'>
-<h3>February 19, 2025</h3>
-<p>It’s a boy! We were over the moon.</p>
-<div class='photos'>
-<img src='its-a-boy.jpg' alt='Photo from February 19, 2025'>
-</div>
-</div>
-<div class='event'>
-<h3>May 3, 2025</h3>
-<p>Our baby shower — surrounded by love, laughter, and so much excitement.</p>
-<div class='photos'>
-<img src='shower1.jpg' alt='Photo from May 3, 2025'>
-<img src='shower2.jpg' alt='Photo from May 3, 2025'>
-<img src='shower3.jpg' alt='Photo from May 3, 2025'>
-<img src='shower4.jpg' alt='Photo from May 3, 2025'>
-</div>
-</div>
-<div class='event'>
-<h3>More to come…</h3>
-<p>Our story is just beginning 💕</p>
-</div>
+  <nav>
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="details.html">Wedding Info</a>
+      <a href="photos.html">Upload Photos</a>
+      <a href="registry.html">Registry</a>
+    </div>
+  </nav>
+<section><h2>August 1, 2023</h2><p>We started talking — we hit it off instantly and stayed up all night telling stories.</p></section>
+<section><h2>August 6, 2023</h2><p>Our first date! We laughed, took selfies, and made memories.</p><div class='photos'><img src='photo1.png' alt='August 6, 2023'><img src='photo2.png' alt='August 6, 2023'></div></section>
+<section><h2>August 22, 2023</h2><p>We made it official! I asked her to be my girlfriend.</p><div class='photos'><img src='official.jpg' alt='August 22, 2023'></div></section>
+<section><h2>November 19, 2023</h2><p>Our first road trip together — we headed to Tennessee for Thanksgiving.</p><div class='photos'><img src='roadtrip.jpg' alt='November 19, 2023'></div></section>
+<section><h2>December 31, 2023</h2><p>Our first New Year's celebration together — ringing in 2024 side by side.</p><div class='photos'><img src='newyear.jpg' alt='December 31, 2023'></div></section>
+<section><h2>August 3, 2024</h2><p>She said yes! We got engaged and began planning forever.</p><div class='photos'><img src='engagement.jpg' alt='August 3, 2024'></div></section>
+<section><h2>August 22, 2024</h2><p>One year together and still going strong.</p><div class='photos'><img src='anniversary.jpg' alt='August 22, 2024'></div></section>
+<section><h2>October 23, 2024</h2><p>We went on our first hunt together — a whole new kind of adventure.</p><div class='photos'><img src='hunt1.jpg' alt='October 23, 2024'><img src='hunt2.jpg' alt='October 23, 2024'></div></section>
+<section><h2>November 19, 2024</h2><p>We found out we’re having a baby! 💙</p><div class='photos'><img src='baby-news.jpg' alt='November 19, 2024'></div></section>
+<section><h2>February 19, 2025</h2><p>It’s a boy! We were over the moon.</p><div class='photos'><img src='its-a-boy.jpg' alt='February 19, 2025'></div></section>
+<section><h2>May 3, 2025</h2><p>Our baby shower — surrounded by love, laughter, and so much excitement.</p><div class='photos'><img src='shower1.jpg' alt='May 3, 2025'><img src='shower2.jpg' alt='May 3, 2025'><img src='shower3.jpg' alt='May 3, 2025'><img src='shower4.jpg' alt='May 3, 2025'></div></section>
+<section><h2>More to come…</h2><p>Our story is just beginning 💕</p></section>
 
-  </div>
   <footer>
-    <p>Daniel & Makenzie — Forever starts here ❤️</p>
+    <p>Made with love by Daniel & Makenzie ❤️</p>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
