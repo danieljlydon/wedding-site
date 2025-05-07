@@ -44,21 +44,27 @@
       color: #1F4E47;
       font-weight: bold;
     }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #1F4E47;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  height: 40px;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: rgba(245, 239, 230, 0.9);
+  border-radius: 6px;
+  z-index: 1000;
+}
+.hamburger span {
+  height: 3px;
+  width: 30px;
+  background: #1F4E47;
+  margin: 4px 0;
+  border-radius: 2px;
+}
     @media (max-width: 768px) {
       .hamburger {
         display: flex;
