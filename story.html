@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniel & Makenzie's Wedding</title>
+  <title>Our Story - Daniel & Makenzie</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  
   <style>
     body {
       margin: 0;
@@ -14,105 +13,88 @@
       background-size: cover;
       color: #F5EFE6;
     }
-    header {
+    header, footer {
       text-align: center;
-      padding: 4rem 2rem 2rem;
       background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
     }
-    .rsvp-button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav {
-      background: #F5EFE6;
-      padding: 1rem;
-    }
-    .menu {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1F4E47;
-      font-weight: bold;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #1F4E47;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .menu { display: none; flex-direction: column; gap: 1rem; margin-top: 1rem; }
-      .menu.active { display: flex; }
-    }
-    section {
+    .timeline {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: rgba(31, 78, 71, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-    }
-    footer {
-      text-align: center;
       padding: 2rem;
-      background: #F5EFE6;
-      color: #1F4E47;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+    }
+    .event {
+      margin-bottom: 2rem;
+    }
+    .event h3 {
+      margin: 0 0 0.5rem;
+      color: #C9A96E;
+    }
+    .event p {
+      margin: 0;
     }
   </style>
-
 </head>
 <body>
-
   <header>
-    <h1>Daniel & Makenzie's Wedding</h1>
-    <p>October 11, 2025</p>
-    <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+    <h1>Our Story</h1>
+    <p>A timeline of love, laughter, and everything in between</p>
   </header>
-  <nav>
-    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
-      <span></span><span></span><span></span>
+  <div class="timeline">
+<div class="event">
+      <h3>August 1, 2023</h3>
+      <p>We started talking — we hit it off instantly and stayed up all night telling stories.</p>
     </div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="story.html">Our Story</a>
-      <a href="details.html">Wedding Info</a>
-      <a href="photos.html">Upload Photos</a>
-      <a href="registry.html">Registry</a>
+    <div class="event">
+      <h3>August 6, 2023</h3>
+      <p>Our first date! We laughed, took selfies, and made memories.</p>
     </div>
-  </nav>
-
-<section><h2>Our Story</h2><p>From the moment we met, we knew life would never be the same...</p></section>
-<footer>
-  <p>Made with love by Daniel & Makenzie ❤️</p>
-</footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector('.hamburger');
-      const menu = document.querySelector('.menu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-      }
-    });
-  </script>
-
+    <div class="event">
+      <h3>August 22, 2023</h3>
+      <p>We made it official! I asked her to be my girlfriend.</p>
+    </div>
+    <div class="event">
+      <h3>November 19, 2023</h3>
+      <p>Our first road trip together — we headed to Tennessee for Thanksgiving.</p>
+    </div>
+    <div class="event">
+      <h3>December 31, 2023</h3>
+      <p>Our first New Year's celebration together — ringing in 2024 side by side.</p>
+    </div>
+    <div class="event">
+      <h3>August 3, 2024</h3>
+      <p>She said yes! We got engaged and began planning forever.</p>
+    </div>
+    <div class="event">
+      <h3>August 22, 2024</h3>
+      <p>One year together and still going strong.</p>
+    </div>
+    <div class="event">
+      <h3>October 23, 2024</h3>
+      <p>We went on our first hunt together — a whole new kind of adventure.</p>
+    </div>
+    <div class="event">
+      <h3>November 19, 2024</h3>
+      <p>We found out we’re having a baby! 💙</p>
+    </div>
+    <div class="event">
+      <h3>February 19, 2025</h3>
+      <p>It’s a boy! We were over the moon.</p>
+    </div>
+    <div class="event">
+      <h3>May 3, 2025</h3>
+      <p>Our baby shower — surrounded by love, laughter, and so much excitement.</p>
+    </div>
+    <div class="event">
+      <h3>More to come…</h3>
+      <p>Our story is just beginning 💕</p>
+    </div>
+    
+  </div>
+  <footer>
+    <p>Daniel & Makenzie — Forever starts here ❤️</p>
+  </footer>
 </body>
 </html>
