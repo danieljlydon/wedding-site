@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Daniel &amp; Makenzie's Wedding</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daniel & Makenzie's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
+  <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -32,6 +31,7 @@
     nav {
       background: #F5EFE6;
       padding: 1rem;
+      position: relative;
     }
     .menu {
       display: flex;
@@ -47,16 +47,27 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      height: 40px;
+      justify-content: center;
+      padding: 0.5rem;
+      background-color: rgba(245, 239, 230, 0.9);
+      border-radius: 6px;
+      z-index: 1000;
     }
     .hamburger span {
       height: 3px;
-      width: 25px;
+      width: 30px;
       background: #1F4E47;
       margin: 4px 0;
       border-radius: 2px;
     }
     @media (max-width: 768px) {
-      .hamburger { display: flex; }
+      .hamburger {
+        display: flex;
+      }
       .menu {
         display: none;
         flex-direction: column;
@@ -64,12 +75,14 @@
         background: #F5EFE6;
         padding: 1rem;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         right: 0;
         z-index: 999;
       }
-      .menu.active { display: flex; }
+      .menu.active {
+        display: flex;
+      }
     }
     section {
       max-width: 900px;
@@ -101,61 +114,54 @@
 </head>
 <body>
 <header>
-<h1>Our Story</h1>
-<p>A timeline of love, laughter, and everything in between</p>
-<a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+  <h1>Our Story</h1>
+  <p>A timeline of love, laughter, and everything in between</p>
+  <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
 </header>
+
 <nav>
-<div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
-<span></span><span></span><span></span>
-</div>
-<div class="menu">
-<a href="index.html">Home</a>
-<a href="story.html">Our Story</a>
-<a href="details.html">Wedding Info</a>
-<a href="photos.html">Upload Photos</a>
-<a href="registry.html">Registry</a>
-<a href="travel.html">Travel &amp; Lodging</a>
-<a href="music.html">Music Requests</a>
-<a href="guestbook.html">Guestbook</a>
-</div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Story</a>
+    <a href="details.html">Wedding Info</a>
+    <a href="photos.html">Upload Photos</a>
+    <a href="registry.html">Registry</a>
+    <a href="travel.html">Travel & Lodging</a>
+    <a href="music.html">Music Requests</a>
+    <a href="guestbook.html">Guestbook</a>
+  </div>
 </nav>
+
 <section><h2>August 1, 2023</h2><p>We started talking — we hit it off instantly and stayed up all night telling stories.</p></section>
 <section><h2>August 6, 2023</h2><p>Our first date! We laughed, took selfies, and made memories.</p><div class="photos"><img alt="August 6, 2023" src="photo1.png"/><img alt="August 6, 2023" src="photo2.png"/></div></section>
 <section><h2>August 22, 2023</h2><p>We made it official! I asked her to be my girlfriend.</p><div class="photos"><img alt="August 22, 2023" src="official.jpg"/></div></section>
 <section><h2>November 19, 2023</h2><p>Our first road trip together — we headed to Tennessee for Thanksgiving.</p><div class="photos"><img alt="November 19, 2023" src="roadtrip.jpg"/></div></section>
 <section><h2>December 31, 2023</h2><p>Our first New Year's celebration together — ringing in 2024 side by side.</p><div class="photos"><img alt="December 31, 2023" src="newyear.jpg"/></div></section>
-<section><h2>August 3, 2024</h2><p>She said yes! That unforgettable moment marked the beginning of our forever—and the start of planning a lifetime together</p><div class="photos"><img alt="August 3, 2024" src="engagement.jpg"/></div></section>
+<section><h2>August 3, 2024</h2><p>She said yes! That unforgettable moment marked the beginning of our forever—and the start of planning a lifetime together.</p><div class="photos"><img alt="August 3, 2024" src="engagement.jpg"/></div></section>
 <section><h2>August 22, 2024</h2><p>One year together and still going strong.</p><div class="photos"><img alt="August 22, 2024" src="anniversary.jpg"/></div></section>
 <section><h2>October 23, 2024</h2><p>We went on our first hunt together — a whole new kind of adventure.</p><div class="photos"><img alt="October 23, 2024" src="hunt1.jpg"/><img alt="October 23, 2024" src="hunt2.jpg"/></div></section>
 <section><h2>November 19, 2024</h2><p>💙💙💙 We found out we’re having a baby! 💙💙💙</p><div class="photos"><img alt="November 19, 2024" src="baby-news.jpg"/></div></section>
 <section><h2>February 19, 2025</h2><p>It’s a boy! Our hearts overflowed with joy the moment we found out—we couldn’t wait to meet our little miracle.</p><div class="photos"><img alt="February 19, 2025" src="its-a-boy.jpg"/></div></section>
 <section><h2>May 3, 2025</h2><p>Our baby shower — surrounded by love, laughter, and so much excitement.</p><div class="photos"><img alt="May 3, 2025" src="shower1.jpg"/><img alt="May 3, 2025" src="shower2.jpg"/><img alt="May 3, 2025" src="shower3.jpg"/><img alt="May 3, 2025" src="shower4.jpg"/></div></section>
 <section><h2>More to come…</h2><p>Our story is just beginning 💕</p></section>
+
 <footer>
-<p>Made with love by Daniel &amp; Makenzie ❤️</p>
+  <p>Made with love by Daniel & Makenzie ❤️</p>
 </footer>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector('.hamburger');
-      const menu = document.querySelector('.menu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-      }
-    });
-  </script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    if (hamburger && menu) {
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
+</script>
 </body>
 </html>
