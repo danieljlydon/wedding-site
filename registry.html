@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Daniel &amp; Makenzie's Wedding</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Daniel & Makenzie's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
+  <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -32,6 +31,7 @@
     nav {
       background: #F5EFE6;
       padding: 1rem;
+      position: relative;
     }
     .menu {
       display: flex;
@@ -47,17 +47,37 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      height: 40px;
+      justify-content: center;
+      padding: 0.5rem;
+      background-color: rgba(245, 239, 230, 0.9);
+      border-radius: 6px;
+      z-index: 1000;
     }
     .hamburger span {
       height: 3px;
-      width: 25px;
+      width: 30px;
       background: #1F4E47;
       margin: 4px 0;
       border-radius: 2px;
     }
     @media (max-width: 768px) {
       .hamburger { display: flex; }
-      .menu { display: none; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #F5EFE6;
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
       .menu.active { display: flex; }
     }
     section {
@@ -77,40 +97,52 @@
   </style>
 </head>
 <body>
+
 <header>
-<h1>Daniel &amp; Makenzie's Wedding</h1>
-<p>October 11, 2025</p>
-<a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+  <h1>Daniel & Makenzie's Wedding</h1>
+  <p>October 11, 2025</p>
+  <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
 </header>
+
 <nav>
-<div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
-<span></span><span></span><span></span>
-</div>
-<div class="menu">
-<a href="index.html">Home</a>
-<a href="story.html">Our Story</a>
-<a href="details.html">Wedding Info</a>
-<a href="photos.html">Upload Photos</a>
-<a href="registry.html">Registry</a>
-<a href="travel.html">Travel &amp; Lodging</a>
-<a href="music.html">Music Requests</a>
-<a href="guestbook.html">Guestbook</a>
-</div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Story</a>
+    <a href="details.html">Wedding Info</a>
+    <a href="photos.html">Upload Photos</a>
+    <a href="registry.html">Registry</a>
+    <a href="travel.html">Travel & Lodging</a>
+    <a href="music.html">Music Requests</a>
+    <a href="guestbook.html">Guestbook</a>
+  </div>
 </nav>
-<section><h2>Our Registry</h2><ul><li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li><li><a href="https://www.target.com/" target="_blank">Target</a></li></ul></section>
+
+<section>
+  <h2>Our Registry</h2>
+  <ul>
+    <li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li>
+    <li><a href="https://www.target.com/" target="_blank">Target</a></li>
+  </ul>
+</section>
+
 <footer>
-<p>Made with love by Daniel &amp; Makenzie ❤️</p>
+  <p>Made with love by Daniel & Makenzie ❤️</p>
 </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-      }
-    });
-  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    if (hamburger && menu) {
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
