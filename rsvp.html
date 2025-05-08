@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>RSVP – Daniel & Makenzie</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
   <style>
@@ -60,7 +60,17 @@
     .thank-you {
       display: none;
       margin-top: 1rem;
-      font-size: 1.1rem;
+    }
+
+    .home-link {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -68,6 +78,7 @@
 
   <div class="form-card">
     <h1>You're Invited!</h1>
+
     <form id="rsvp-form">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
@@ -79,7 +90,11 @@
       <textarea name="message" rows="4" placeholder="Leave us a note! (Optional)"></textarea>
       <button type="submit">Send RSVP</button>
     </form>
-    <div class="thank-you" id="thank-you-msg">Thank you! 🎉 We can’t wait to celebrate with you.</div>
+
+    <div class="thank-you" id="thank-you-msg">
+      <p>Thank you! 🎉 We can’t wait to celebrate with you.</p>
+      <a class="home-link" href="index.html">Return to Home</a>
+    </div>
   </div>
 
   <script>
@@ -103,6 +118,7 @@
 
       if (response.ok) {
         form.reset();
+        form.style.display = "none";
         document.getElementById("thank-you-msg").style.display = "block";
       } else {
         alert("There was a problem submitting your RSVP. Please try again.");
