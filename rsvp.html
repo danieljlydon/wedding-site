@@ -60,28 +60,6 @@
       cursor: pointer;
     }
 
-    .thank-you {
-      display: none;
-      margin-top: 1rem;
-      animation: fadeIn 1.5s ease-in-out forwards;
-    }
-
-    .home-link {
-      margin-top: 1rem;
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
     .floating {
       position: absolute;
       bottom: -50px;
@@ -91,14 +69,8 @@
     }
 
     @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) scale(1.5);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
   </style>
 </head>
@@ -107,7 +79,8 @@
   <div class="form-card">
     <h1>You're Invited!</h1>
 
-    <form id="rsvp-form">
+    <form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbwXz1X3bx2L-6uUQp-Q-HlMp_jCPuhl6O9PdNKk6M0vVJd9HHYVfYHKCchYs5LosTP7/exec" method="GET">
+      <input type="hidden" name="redirect" value="https://danieljlydon.github.io/rsvp-thankyou.html">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <select name="attending" required>
@@ -115,47 +88,18 @@
         <option value="Yes">Yes, I’ll be there!</option>
         <option value="No">Sorry, I can’t make it</option>
       </select>
-      <textarea name="message" rows="4" placeholder="Leave us a note! (Optional)"></textarea>
+      <input type="number" name="guests" placeholder="How many people (including you)?" min="1" required />
+      <textarea name="love" rows="4" placeholder="What do you love about Dan & Kenzy?" required></textarea>
       <button type="submit">Send RSVP</button>
     </form>
-
-    <div class="thank-you" id="thank-you-msg">
-      <p>💖 Thank you! We can’t wait to celebrate with you. 💋</p>
-      <a class="home-link" href="index.html">Return to Home</a>
-    </div>
   </div>
 
   <script>
     const form = document.getElementById('rsvp-form');
-    form.addEventListener('submit', async function (e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-
-      const formData = {
-        name: form.name.value,
-        email: form.email.value,
-        attending: form.attending.value,
-        message: form.message.value
-      };
-
-      try {
-        await fetch("https://script.google.com/macros/s/AKfycbwXz1X3bx2L-6uUQp-Q-HlMp_jCPuhl6O9PdNKk6M0vVJd9HHYVfYHKCchYs5LosTP7/exec", {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        });
-
-        form.reset();
-        form.style.display = "none";
-        document.getElementById("thank-you-msg").style.display = "block";
-
-setInterval(createFloatingEmoji, 250);
-
-      } catch (err) {
-        alert("Something went wrong. Please try again.");
-        console.error(err);
-      }
+      const params = new URLSearchParams(new FormData(form)).toString();
+      window.location.href = form.action + '?' + params;
     });
 
     function createFloatingEmoji() {
