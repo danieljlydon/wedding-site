@@ -4,64 +4,43 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>RSVP - Daniel &amp; Makenzie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: url('f0d9a2d3-ca4b-4bc4-bf5b-364c5cf14a4c.jpg') no-repeat center center fixed;
+      background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #F5EFE6;
     }
-
     header {
       text-align: center;
       padding: 4rem 2rem 2rem;
       background: rgba(0, 0, 0, 0.5);
     }
-
-    .rsvp-container {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background-color: rgba(31, 78, 71, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(201, 169, 110, 0.4);
-      text-align: center;
-    }
-
-    .rsvp-container h2 {
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-
-    .rsvp-container p {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    .rsvp-container iframe {
-      width: 100%;
-      height: 1000px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    .thank-you {
-      margin-top: 2rem;
-      font-size: 1.1rem;
-      color: #F5EFE6;
-    }
-
-    .home-link {
-      margin-top: 1rem;
+    .rsvp-button {
       display: inline-block;
+      margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
       background-color: #D2691E;
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+    }
+    .form-wrapper {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 1rem;
+      background-color: rgba(31, 78, 71, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+    }
+    iframe {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -70,19 +49,14 @@
 <header>
   <h1>Daniel &amp; Makenzie's Wedding</h1>
   <p>October 11, 2025</p>
+  <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
 </header>
 
-<section class="rsvp-container">
-  <h2>You're Invited!</h2>
-  <p>Please let us know if you’ll be celebrating with us by filling out the form below.</p>
-
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true" loading="lazy">Loading…</iframe>
-
-  <div class="thank-you">
-    <p>Thank you for RSVPing! We can't wait to celebrate with you.</p>
-    <a class="home-link" href="index.html">Return to Home</a>
-  </div>
-</section>
+<div class="form-wrapper">
+  <iframe loading="lazy" src="https://docs.google.com/forms/d/e/1FAIpQLSe53D2VJ-pPJ9o7s5Vg2oucVEhfmTaOsQaf3rVXv0G1nEs7fA/viewform?embedded=true">
+    Loading…
+  </iframe>
+</div>
 
 </body>
 </html>
