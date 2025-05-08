@@ -1,1 +1,75 @@
-<!-- Placeholder for thankyou.html -->
+<head><style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: url('bg-details.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #F5EFE6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav {
+      background: #F5EFE6;
+      padding: 1rem;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1F4E47;
+      font-weight: bold;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #1F4E47;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .menu.active { display: flex; }
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: rgba(31, 78, 71, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #F5EFE6;
+      color: #1F4E47;
+    }
+  </style></head><!-- Placeholder for thankyou.html -->

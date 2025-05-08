@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: url('bg-index.jpg') no-repeat center center fixed;
+      background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #F5EFE6;
     }
@@ -57,7 +57,13 @@
     }
     @media (max-width: 768px) {
       .hamburger { display: flex; }
-      .menu { display: none; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+      }
       .menu.active { display: flex; }
     }
     section {
