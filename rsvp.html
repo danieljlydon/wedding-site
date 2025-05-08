@@ -130,21 +130,31 @@
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const formData = new FormData(form);
-      const thankYou = document.getElementById("thank-you-msg");
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        attending: form.attending.value,
+        message: form.message.value
+      };
 
-      await fetch("https://formspree.io/f/mnndvwbj", {
-        method: "POST",
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+      try {
+        await fetch("https://script.google.com/macros/s/AKfycbwXz1X3bx2L-6uUQp-Q-HlMp_jCPuhl6O9PdNKk6M0vVJd9HHYVfYHKCchYs5LosTP7/exec", {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
 
-      form.reset();
-      form.style.display = "none";
-      thankYou.style.display = "block";
+        form.reset();
+        form.style.display = "none";
+        document.getElementById("thank-you-msg").style.display = "block";
 
-      for (let i = 0; i < 30; i++) {
-        setTimeout(createFloatingEmoji, i * 150);
+setInterval(createFloatingEmoji, 250);
+
+      } catch (err) {
+        alert("Something went wrong. Please try again.");
+        console.error(err);
       }
     });
 
