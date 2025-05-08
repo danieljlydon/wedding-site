@@ -106,11 +106,9 @@
 
   <nav>
     <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-<div class="menu" id="menu">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu" id="menu">
       <a href="index.html">Home</a>
       <a href="story.html">Our Story</a>
       <a href="details.html">Wedding Info</a>
@@ -136,6 +134,7 @@
     <p>Made with love by Daniel & Makenzie ❤️</p>
   </footer>
 
+  <!-- Hamburger Menu Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const hamburger = document.getElementById('hamburger');
@@ -145,26 +144,29 @@
           menu.classList.toggle('active');
         });
       }
-
-      const targetDate = new Date("October 11, 2025 14:00:00").getTime();
-      const countdownEl = document.getElementById("countdown");
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        if (distance < 0) {
-          countdownEl.innerHTML = "🎉 It's Wedding Time! 🎉";
-          clearInterval(interval);
-          return;
-        }
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((distance % (1000 * 60)) / 1000);
-        countdownEl.innerHTML = `${days}d ${hrs}h ${mins}m ${secs}s`;
-      }
-      updateCountdown();
-      const interval = setInterval(updateCountdown, 1000);
     });
+  </script>
+
+  <!-- Countdown Script -->
+  <script>
+    const targetDate = new Date("October 11, 2025 14:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "🎉 It's Wedding Time! 🎉";
+        clearInterval(interval);
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `${days}d ${hrs}h ${mins}m ${secs}s`;
+    }
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
   </script>
 
 </body>
