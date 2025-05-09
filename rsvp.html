@@ -81,14 +81,17 @@
     const kids = document.getElementById('kids');
 
     attending.addEventListener('change', () => {
-      if (attending.value === "No") {
-        adults.disabled = true;
-        kids.disabled = true;
+      const notAttending = attending.value === "No";
+
+      adults.disabled = notAttending;
+      kids.disabled = notAttending;
+
+      adults.required = !notAttending;
+      kids.required = !notAttending;
+
+      if (notAttending) {
         adults.value = "";
         kids.value = "";
-      } else {
-        adults.disabled = false;
-        kids.disabled = false;
       }
     });
 
