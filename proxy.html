@@ -1,2 +1,26 @@
 
-<!-- This file is a placeholder. In practice, this will be a GitHub-hosted HTML proxy to bypass CORS. -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      async function forwardData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const formData = new FormData();
+
+        for (const [key, value] of urlParams.entries()) {
+          formData.append(key, value);
+        }
+
+        await fetch("https://script.google.com/macros/s/AKfycbxQNVVKWepSYIguXG70UKXeQxGpBe9LpGfSSWd73eawmotEqwEXqRYTIep9FFmrIKo/exec", {
+          method: "POST",
+          body: formData,
+          mode: "no-cors"
+        });
+
+        window.location.href = "rsvp-thankyou.html";
+      }
+
+      forwardData();
+    </script>
+  </body>
+</html>
