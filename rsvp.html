@@ -59,7 +59,7 @@
 <body>
   <div class="form-card">
     <h1>You're Invited!</h1>
-    <form id="rsvp-form" action="https://hook.us2.make.com/a5w6m3ixv0b5pocqgu28vbwhxx9njccy" method="POST">
+    <form id="rsvp-form">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <select name="attending" id="attending" required>
@@ -75,6 +75,7 @@
   </div>
 
   <script>
+    const form = document.getElementById('rsvp-form');
     const attending = document.getElementById('attending');
     const adults = document.getElementById('adults');
     const kids = document.getElementById('kids');
@@ -90,15 +91,15 @@
         kids.disabled = false;
       }
     });
-  </script>
 
-  <script>
-    // Redirect to thank-you page after submission
-    const form = document.getElementById('rsvp-form');
-    form.addEventListener('submit', function () {
-      setTimeout(() => {
-        window.location.href = "rsvp-thankyou.html";
-      }, 100); // Slight delay to let the webhook receive the data
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      await fetch("https://hook.us2.make.com/a5w6m3ixv0b5pocqgu28vbwhxx9njccy", {
+        method: "POST",
+        body: formData
+      });
+      window.location.href = "rsvp-thankyou.html";
     });
   </script>
 </body>
