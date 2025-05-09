@@ -79,8 +79,7 @@
   <div class="form-card">
     <h1>You're Invited!</h1>
 
-    <form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbziQZuqClBYqSzGYNMHAExyur3k-dLsaH8bDoSSZrnlLWTcAHcHrO1bbQ_4ILYeN4PJww/exec" method="GET">
-      <input type="hidden" name="redirect" value="https://danieljlydon.github.io/wedding-site/rsvp-thankyou.html">
+    <form id="rsvp-form">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <select name="attending" required>
@@ -98,8 +97,23 @@
     const form = document.getElementById('rsvp-form');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const params = new URLSearchParams(new FormData(form)).toString();
-      window.location.href = form.action + '?' + params;
+      const formData = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbziQZuqClBYqSzGYNMHAExyur3k-dLsaH8bDoSSZrnlLWTcAHcHrO1bbQ_4ILYeN4PJww/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = "rsvp-thankyou.html";
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("There was an error submitting the form.");
+      });
     });
 
     function createFloatingEmoji() {
