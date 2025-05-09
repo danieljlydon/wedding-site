@@ -1,97 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You – Daniel & Makenzie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Thank You!</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Playfair Display', serif;
-      background: url('bg-details.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #F5EFE6;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      overflow: hidden;
+      height: 100vh;
+      background-color: #1f4e47;
+      color: #F5EFE6;
       text-align: center;
     }
-
-    .thank-you-box {
-      background-color: rgba(31, 78, 71, 0.88);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
-      z-index: 1;
-    }
-
-    .thank-you-box h1 {
+    h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .thank-you-box p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .home-link {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .floating {
-      position: absolute;
-      bottom: -50px;
-      font-size: 2rem;
-      animation: floatUp 5s ease-in infinite;
-      pointer-events: none;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) scale(1.5);
-        opacity: 0;
-      }
     }
   </style>
 </head>
 <body>
-
-  <div class="thank-you-box">
-    <h1>💖 Thank you for your RSVP! 💋</h1>
-    <p>We’re so excited to celebrate this day with you.</p>
-    <a class="home-link" href="index.html">Return to Home</a>
-  </div>
-
-  <script>
-    function createFloatingEmoji() {
-      const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
-      const emoji = document.createElement('div');
-      emoji.className = 'floating';
-      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      emoji.style.left = Math.random() * 100 + 'vw';
-      emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      document.body.appendChild(emoji);
-      setTimeout(() => emoji.remove(), 5000);
-    }
-
-    setInterval(createFloatingEmoji, 250);
-  </script>
-
+  <h1>Thank you for your RSVP!</h1>
 </body>
 </html>
