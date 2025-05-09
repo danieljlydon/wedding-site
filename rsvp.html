@@ -54,6 +54,17 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .floating {
+      position: absolute;
+      bottom: -50px;
+      font-size: 2rem;
+      animation: floatUp 5s ease-in infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
   </style>
 </head>
 <body>
@@ -104,6 +115,20 @@
       });
       window.location.href = "rsvp-thankyou.html";
     });
+
+    // Floating emojis
+    function createFloatingEmoji() {
+      const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
+      const emoji = document.createElement('div');
+      emoji.className = 'floating';
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 5000);
+    }
+
+    setInterval(createFloatingEmoji, 250);
   </script>
 </body>
 </html>
