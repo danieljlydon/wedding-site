@@ -16,17 +16,17 @@
       align-items: center;
       min-height: 100vh;
       color: #F5EFE6;
-      overflow: hidden;
       flex-direction: column;
       text-align: center;
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .home-button {
+      margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
       background-color: #D2691E;
       color: white;
@@ -36,6 +36,31 @@
       cursor: pointer;
       text-decoration: none;
       font-size: 1.2rem;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Playfair Display', serif;
+    }
+
+    button {
+      background-color: #D2691E;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
     }
 
     .floating {
@@ -57,6 +82,24 @@
   <h1>Thank you for your RSVP!</h1>
   <a href="index.html" class="home-button">Back to Home</a>
 
+  <div class="form-container">
+    <h2>Request a Song 🎶</h2>
+    <form id="musicForm" action="https://formsubmit.co/danieljlydon@email.com" method="POST">
+      <input type="hidden" name="_redirect" value="https://danieljlydon.github.io/wedding-site/index.html" />
+      
+      <label for="name">Your Name (optional)</label>
+      <input type="text" name="Name" id="name" />
+
+      <label for="song">Song Name</label>
+      <input type="text" name="Song" id="song" required />
+
+      <label for="artist">Artist (optional)</label>
+      <input type="text" name="Artist" id="artist" />
+
+      <button type="submit">Submit Song Request</button>
+    </form>
+  </div>
+
   <script>
     function createFloatingEmoji() {
       const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
@@ -70,6 +113,12 @@
     }
 
     setInterval(createFloatingEmoji, 250);
+
+    document.getElementById('musicForm').addEventListener('submit', function () {
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 4000);
+    });
   </script>
 
 </body>
