@@ -72,6 +72,10 @@
       margin-top: 1.5rem;
     }
 
+    #music-status {
+      margin-top: 1rem;
+    }
+
     .floating {
       position: absolute;
       bottom: -50px;
@@ -93,19 +97,20 @@
 
   <div class="form-container">
     <h2 style="text-align:center;">Request a Song 🎶</h2>
-    <form id="musicForm" action="https://formsubmit.co/danieljlydon@email.com" method="POST">
-      <input type="hidden" name="_redirect" value="https://danieljlydon.github.io/wedding-site/index.html" />
+    <form id="music-form">
+      <input type="hidden" name="FormType" value="MusicRequest" />
 
-      <label for="name">Your Name</label>
-      <input type="text" name="Name" id="name" required />
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="Name" required>
 
-      <label for="song">Song Name</label>
-      <input type="text" name="Song" id="song" required />
+      <label for="song">Favorite Country Love Song:</label>
+      <input type="text" id="song" name="Song" required>
 
-      <label for="artist">Artist</label>
-      <input type="text" name="Artist" id="artist" required />
+      <label for="note">Anything else you'd like to tell us?</label>
+      <textarea id="note" name="Note" rows="4"></textarea>
 
       <button type="submit">Submit Song Request</button>
+      <p id="music-status"></p>
     </form>
   </div>
 
@@ -123,10 +128,27 @@
 
     setInterval(createFloatingEmoji, 250);
 
-    document.getElementById('musicForm').addEventListener('submit', function () {
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 4000);
+    document.getElementById("music-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const status = document.getElementById("music-status");
+      status.textContent = "Submitting...";
+
+      const formData = new FormData(this);
+      fetch("https://hook.us2.make.com/a5w6m3ixv0b5pocqgu28vbwhxx9njccy", {
+        method: "POST",
+        body: formData,
+      })
+      .then(response => {
+        if (response.ok) {
+          status.textContent = "Thank you! Your song has been added to the list 🎵";
+          this.reset();
+        } else {
+          status.textContent = "Something went wrong. Please try again later.";
+        }
+      })
+      .catch(error => {
+        status.textContent = "There was an error submitting the form.";
+      });
     });
   </script>
 
