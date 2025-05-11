@@ -54,14 +54,14 @@
       font-weight: bold;
       cursor: pointer;
     }
-  .floating {
-  position: fixed;
-  bottom: -50px;
-  font-size: 2rem;
-  animation: floatUp 5s ease-in infinite;
-  pointer-events: none;
-  z-index: 9999;
-}
+    .floating {
+      position: fixed;
+      bottom: -50px;
+      font-size: 2rem;
+      animation: floatUp 5s ease-in infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
     @keyframes floatUp {
       0% { transform: translateY(0) scale(1); opacity: 1; }
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
@@ -72,6 +72,7 @@
   <div class="form-card">
     <h1>You're Invited!</h1>
     <form id="rsvp-form">
+      <input type="hidden" name="FormType" value="RSVP" />
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <select name="attending" id="attending" required>
@@ -117,7 +118,6 @@
       window.location.href = "rsvp-thankyou.html";
     });
 
-    // Floating emojis
     function createFloatingEmoji() {
       const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
       const emoji = document.createElement('div');
