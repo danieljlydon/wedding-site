@@ -74,13 +74,28 @@
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
     }
+    input, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #D2691E;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
     footer {
       text-align: center;
       padding: 2rem;
       background: #F5EFE6;
       color: #1F4E47;
     }
-  </style>
+</style>
 </head>
 <body>
 <header>
@@ -104,26 +119,58 @@
 </div>
 </nav>
 <section>
-<section>
-<h2>Request a Song</h2>
-<p>This is a country wedding, so please send us your favorite country love song – it might just be played at our reception! 🎶</p>
-<iframe frameborder="0" height="800" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLScAAa_DYDz9YBimAxz_wQ4PN0809eiiYi087M-BqsZJK5YpjQ/viewform?embedded=true" width="100%">
-    Loading…
-  </iframe>
+  <h2>Request a Song</h2>
+  <p>This is a country wedding, so send us your favorite love song—it just might make the playlist! 🎶</p>
+  <form id="music-form">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="Name" required>
+
+    <label for="song">Favorite Country Love Song:</label>
+    <input type="text" id="song" name="Song" required>
+
+    <label for="note">Anything else you'd like to tell us?</label>
+    <textarea id="note" name="Note" rows="4"></textarea>
+
+    <button type="submit">Submit Song Request</button>
+    <p id="music-status" style="margin-top: 1rem;"></p>
+  </form>
 </section>
 <footer>
 <p>Made with love by Daniel &amp; Makenzie ❤️</p>
 </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    if (hamburger && menu) {
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
+
+  document.getElementById("music-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const status = document.getElementById("music-status");
+    status.textContent = "Submitting...";
+
+    const formData = new FormData(this);
+    fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_URL/exec", {
+      method: "POST",
+      body: formData,
+    })
+    .then(response => {
+      if (response.ok) {
+        status.textContent = "Thank you! Your song has been added to the list 🎵";
+        this.reset();
+      } else {
+        status.textContent = "Something went wrong. Please try again later.";
       }
+    })
+    .catch(error => {
+      status.textContent = "There was an error submitting the form.";
     });
-  </script>
-</section></body>
+  });
+</script>
+</body>
 </html>
