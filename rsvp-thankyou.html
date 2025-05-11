@@ -121,38 +121,3 @@
       emoji.className = 'floating';
       emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       emoji.style.left = Math.random() * 100 + 'vw';
-      emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      document.body.appendChild(emoji);
-      setTimeout(() => emoji.remove(), 5000);
-    }
-
-    setInterval(createFloatingEmoji, 250);
-
-    document.getElementById("music-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const status = document.getElementById("music-status");
-      status.textContent = "Thank you! Your song has been added to the list 🎵";
-
-      const formData = new FormData(this);
-      fetch("https://hook.us2.make.com/a5w6m3ixv0b5pocqgu28vbwhxx9njccy", {
-        method: "POST",
-        body: formData,
-      })
-      .then(response => {
-        if (response.ok) {
-          this.reset();
-          setTimeout(() => {
-            window.location.href = "index.html";
-          }, 3000); // 3-second redirect
-        } else {
-          status.textContent = "Something went wrong. Please try again later.";
-        }
-      })
-      .catch(error => {
-        status.textContent = "There was an error submitting the form.";
-      });
-    });
-  </script>
-
-</body>
-</html>
