@@ -120,9 +120,9 @@
 <section>
   <h2>Request a Song</h2>
   <p>This is a country wedding, so send us your favorite love song—it just might make the playlist! 🎶</p>
-  <form id="music-form" action="https://formsubmit.co/YOUR_CUSTOM_MAKE_WEBHOOK@email.com" method="POST">
+  <form id="music-form">
     <input type="hidden" name="FormType" value="MusicRequest" />
-    
+
     <label for="name">Your Name:</label>
     <input type="text" id="name" name="Name" required>
 
@@ -156,7 +156,7 @@
     status.textContent = "Submitting...";
 
     const formData = new FormData(this);
-    fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_URL/exec", {
+    fetch("https://hook.us2.make.com/a5w6m3ixv0b5pocqgu28vbwhxx9njccy", {
       method: "POST",
       body: formData,
     })
