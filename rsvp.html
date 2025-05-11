@@ -95,13 +95,10 @@
 
     attending.addEventListener('change', () => {
       const notAttending = attending.value === "No";
-
       adults.disabled = notAttending;
       kids.disabled = notAttending;
-
       adults.required = !notAttending;
       kids.required = !notAttending;
-
       if (notAttending) {
         adults.value = "";
         kids.value = "";
@@ -115,7 +112,7 @@
         method: "POST",
         body: formData
       });
-      window.location.href = "rsvp-thankyou-new.html"; // 🔥 updated line here
+      window.location.href = "rsvp-thankyou-new.html";
     });
 
     function createFloatingEmoji() {
