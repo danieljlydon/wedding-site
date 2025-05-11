@@ -147,5 +147,32 @@
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
   </script>
+
+<select id="bg-selector" style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+  <option disabled selected>Choose Background</option>
+  <option value="Snapchat-1979051471.jpg">Snapchat-1979051471.jpg</option>
+  <option value="ring.jpg">ring.jpg</option>
+  <option value="background.jpg">background.jpg</option>
+  <option value="anniversary.jpg">anniversary.jpg</option>
+  <option value="baby-news.jpg">baby-news.jpg</option>
+  <option value="bg-details.jpg">bg-details.jpg</option>
+  <option value="bg-main.jpg">bg-main.jpg</option>
+  <option value="engaged.jpg">engaged.jpg</option>
+  <option value="first-rodeo.jpg">first-rodeo.jpg</option>
+  <option value="hunting.jpg">hunting.jpg</option>
+  <option value="our-story.jpg">our-story.jpg</option>
+  <option value="pregnancy.jpg">pregnancy.jpg</option>
+  <option value="thanksgiving.jpg">thanksgiving.jpg</option>
+</select>
+<script>
+  document.getElementById('bg-selector').addEventListener('change', function () {
+    document.body.style.backgroundImage = `url('${this.value}')`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundAttachment = "fixed";
+  });
+</script>
+
 </body>
 </html>
