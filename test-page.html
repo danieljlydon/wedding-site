@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel & Makenzie's Wedding – Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: url('bg-details.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #F5EFE6;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    header {
+      padding: 4rem 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 1rem auto;
+    }
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+    .rsvp-button:hover {
+      transform: scale(1.05);
+    }
+    .countdown {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+    .section {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 12px;
+      max-width: 900px;
+    }
+    .floating {
+      position: absolute;
+      bottom: -50px;
+      font-size: 2rem;
+      animation: floatUp 5s ease-in infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+    iframe {
+      border: none;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  
+    nav {
+      background: #F5EFE6;
+      padding: 1rem;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1F4E47;
+      font-weight: bold;
+    }
+    .hamburger {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .hamburger span {
+        height: 3px;
+        width: 25px;
+        background: #1F4E47;
+        margin: 4px 0;
+        border-radius: 2px;
+      }
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .menu.active {
+        display: flex;
+      }
+    }
+    
+    .play-button-container {
+      margin-top: 1rem;
+    }
+    .heart-button {
+      font-size: 2rem;
+      width: 80px;
+      height: 80px;
+      border: none;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff4d4d 0%, #cc0000 100%);
+      color: white;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+    .heart-button:hover {
+      transform: scale(1.1);
+    }
+    </style>
+</head>
+<body>
+
+<nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Story</a>
+    <a href="details.html">Wedding Info</a>
+    <a href="photos.html">Upload Photos</a>
+    <a href="registry.html">Registry</a>
+    <a href="travel.html">Travel & Lodging</a>
+    <a href="music.html">Music</a>
+    <a href="guestbook.html">Guestbook</a>
+  </div>
+</nav>
+
+  <header>
+    <h1>Daniel & Makenzie</h1>
+    <h2>October 11, 2025</h2>
+    <a href="rsvp.html" class="rsvp-button">RSVP Now</a>
+  </header>
+
+  <div class="countdown" id="countdown">Loading countdown...</div>
+
+  <div class="section">
+    <h2>Welcome!</h2>
+    <p>We’re so excited to celebrate this special day with all of you. This site has everything you need — RSVP, details, travel info, and more. Take a look around!</p>
+  </div>
+
+  <div class="section">
+    <h2>🎵 Favorite Country Love Song</h2>
+<div class="play-button-container"><button class="heart-button" onclick="window.open('https://www.youtube.com/watch?v=ObDQtfZZ0_k', '_blank')">▶</button></div>
+    <p>This is one of our favorites. Feel the love and dance along!</p>
+    
+  </div>
+
+  <div class="section">
+    <h2>📸 Our Story Slideshow</h2>
+    <p>Here's a glimpse into the moments that brought us here.</p>
+    <img src="20230806_171746.jpg" style="width:100%; max-width:500px; border-radius: 12px;" alt="Preview Slide">
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const weddingDate = new Date("2025-10-11T14:00:00");
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").textContent = "It's wedding time! 🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s until “I Do!” 💍`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function createFloatingEmoji() {
+      const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
+      const emoji = document.createElement('div');
+      emoji.className = 'floating';
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 5000);
+    }
+    setInterval(createFloatingEmoji, 250);
+  </script>
+
+<script>
+  document.getElementById("hamburger").addEventListener("click", function () {
+    document.getElementById("menu").classList.toggle("active");
+  });
+</script>
+</body>
+
+</html>
