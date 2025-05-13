@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You & Music Request</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thank You &amp; Music Request</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -45,30 +46,25 @@
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Thank you for RSVPing!</h1>
-    <p>We can't wait to celebrate with you 🎉</p>
-  </header>
-
-  <div class="form-container">
-    <h2>Request a Song 🎶</h2>
-    <form id="musicForm" action="https://formsubmit.co/danieljlydon@email.com" method="POST">
-      <input type="hidden" name="_redirect" value="https://danieljlydon.github.io/wedding-site/index.html" />
-      <label for="name">Your Name (optional)</label>
-      <input type="text" name="Name" id="name" />
-
-      <label for="song">Song Name</label>
-      <input type="text" name="Song" id="song" required />
-
-      <label for="artist">Artist (optional)</label>
-      <input type="text" name="Artist" id="artist" />
-
-      <button type="submit">Submit Request</button>
-    </form>
-  </div>
-
-  <script>
+<body style="background-color: rgba(0, 0, 0, 0.6);">
+<header>
+<h1>Thank you for RSVPing!</h1>
+<p>We can't wait to celebrate with you 🎉</p>
+</header>
+<div class="form-container">
+<h2>Request a Song 🎶</h2>
+<form action="https://formsubmit.co/danieljlydon@email.com" id="musicForm" method="POST">
+<input name="_redirect" type="hidden" value="https://danieljlydon.github.io/wedding-site/index.html"/>
+<label for="name">Your Name (optional)</label>
+<input id="name" name="Name" type="text"/>
+<label for="song">Song Name</label>
+<input id="song" name="Song" required="" type="text"/>
+<label for="artist">Artist (optional)</label>
+<input id="artist" name="Artist" type="text"/>
+<button type="submit">Submit Request</button>
+</form>
+</div>
+<script>
     document.getElementById('musicForm').addEventListener('submit', function (e) {
       setTimeout(() => {
         window.location.href = 'index.html';

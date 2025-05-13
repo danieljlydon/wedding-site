@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You – Daniel & Makenzie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thank You – Daniel &amp; Makenzie</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -92,29 +93,25 @@
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
     </style>
-    
 </head>
-<body>
-
-  <h1>Thank you for your RSVP!</h1>
-  <a href="index.html" class="home-button">Back to Home</a>
-
-  <div class="form-container">
-    <h2 style="text-align:center;">Request a Song 🎶</h2>
-    <form id="music-form">
-      <input type="hidden" name="FormType" value="MusicRequest" />
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="Name" required />
-      <label for="song">Favorite Country Love Song:</label>
-      <input type="text" id="song" name="Song" required />
-      <label for="note">Anything else you'd like to tell us?</label>
-      <textarea id="note" name="Note" rows="4"></textarea>
-      <button type="submit">Submit Song Request</button>
-      <p id="music-status"></p>
-    </form>
-  </div>
-
-  <script>
+<body style="background-color: rgba(0, 0, 0, 0.6);">
+<h1>Thank you for your RSVP!</h1>
+<a class="home-button" href="index.html">Back to Home</a>
+<div class="form-container">
+<h2 style="text-align:center;">Request a Song 🎶</h2>
+<form id="music-form">
+<input name="FormType" type="hidden" value="MusicRequest"/>
+<label for="name">Your Name:</label>
+<input id="name" name="Name" required="" type="text"/>
+<label for="song">Favorite Country Love Song:</label>
+<input id="song" name="Song" required="" type="text"/>
+<label for="note">Anything else you'd like to tell us?</label>
+<textarea id="note" name="Note" rows="4"></textarea>
+<button type="submit">Submit Song Request</button>
+<p id="music-status"></p>
+</form>
+</div>
+<script>
     function createFloatingEmoji() {
       const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
       const emoji = document.createElement('div');
@@ -154,7 +151,5 @@
   
     setInterval(createFloatingEmoji, 250);
     </script>
-    
-
 </body>
 </html>
