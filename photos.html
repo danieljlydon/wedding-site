@@ -74,6 +74,20 @@
     box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
     text-align: center;
   }
+  iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 360px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 1rem;
+  }
+  #thank-you-message {
+    display: none;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: #F5EFE6;
+  }
   footer {
     text-align: center;
     padding: 2rem;
@@ -106,13 +120,17 @@
 
 <section>
   <h2>Share Your Favorite Wedding Moments!</h2>
-  <p>Tap the button below to upload photos directly from your phone or computer — no sign-in needed 💕</p>
-  <a href="https://drive.google.com/drive/folders/1nipsp8FrXrtMyKxsv9bth5tmeaKmTXYt?usp=sharing"
-     target="_blank"
-     class="rsvp-button"
-     style="font-size: 1.1rem; padding: 1rem 2rem; margin-top: 2rem; display: inline-block;">
-     📸 Upload Your Photos
-  </a>
+  <p>Upload directly below — no login needed 💕</p>
+  <iframe 
+    src="https://uploadthing.com/uploader/da6b9cd9-00cc-470e-a59c-91dc5b8aa832"
+    loading="lazy"
+    onload="this.contentWindow.addEventListener('message', function(e) {
+      if (e.data?.uploaded) {
+        document.getElementById('thank-you-message').style.display = 'block';
+      }
+    });">
+  </iframe>
+  <p id="thank-you-message">🎉 Thank you for sharing your memory with us!</p>
 </section>
 
 <footer>
