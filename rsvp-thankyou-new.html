@@ -92,9 +92,23 @@
       0% { transform: translateY(0) scale(1); opacity: 1; }
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
-    </style>
+    
+.black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+</style>
 </head>
-<body style="background-color: rgba(0, 0, 0, 0.6);">
+<body style="background-color: rgba(0, 0, 0, 0.6);"><div class="black-overlay"></div><div class="content-wrapper">
 <h1>Thank you for your RSVP!</h1>
 <a class="home-button" href="index.html">Back to Home</a>
 <div class="form-container">
@@ -151,5 +165,5 @@
   
     setInterval(createFloatingEmoji, 250);
     </script>
-</body>
+</div></body>
 </html>
