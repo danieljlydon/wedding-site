@@ -121,15 +121,12 @@
 <section>
   <h2>Share Your Favorite Wedding Moments!</h2>
   <p>Upload directly below — no login needed 💕</p>
-  <iframe 
-    src="https://uploadthing.com/uploader/da6b9cd9-00cc-470e-a59c-91dc5b8aa832"
-    loading="lazy"
-    onload="this.contentWindow.addEventListener('message', function(e) {
-      if (e.data?.uploaded) {
-        document.getElementById('thank-you-message').style.display = 'block';
-      }
-    });">
-  </iframe>
+  <div style="cursor: pointer;" onclick="showThankYou()">
+    <iframe 
+      src="https://uploadthing.com/uploader/da6b9cd9-00cc-470e-a59c-91dc5b8aa832"
+      loading="lazy">
+    </iframe>
+  </div>
   <p id="thank-you-message">🎉 Thank you for sharing your memory with us!</p>
 </section>
 
@@ -146,6 +143,10 @@
       });
     }
   });
+
+  function showThankYou() {
+    document.getElementById('thank-you-message').style.display = 'block';
+  }
 </script>
 </body>
 </html>
