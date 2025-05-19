@@ -85,8 +85,20 @@
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
       text-align: center;
     }
-    #upload-container {
-      margin-top: 2rem;
+    input[type="file"] {
+      margin: 1rem auto;
+      display: block;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
     .thank-you {
       margin-top: 1.5rem;
@@ -105,7 +117,6 @@
       color: #1F4E47;
     }
   </style>
-  <script src="https://uploadthing.com/widget/script.js" defer></script>
 </head>
 <body>
   <header>
@@ -130,27 +141,19 @@
   </nav>
   <section>
     <h2>Share Your Wedding Day Photos & Videos</h2>
-    <p>We’d love to see the moments you captured! Upload up to 10 images or videos below.</p>
-    <div id="upload-container"></div>
+    <p>We’d love to see the moments you captured! Upload up to 10 files below.</p>
+    <form action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="post" enctype="multipart/form-data" target="_blank">
+      <input type="file" name="file" accept="image/*,video/*" required multiple>
+      <button type="submit">Upload Files</button>
+    </form>
     <div class="thank-you" id="thank-you" style="display: none;">❤️ Thank you for sharing your memories!</div>
   </section>
   <footer>
-    <p>Made with love by Daniel & Makenzie ❤️</p>
+    <p>Made with love by Daniel &amp; Makenzie ❤️</p>
   </footer>
   <script>
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('menu').classList.toggle('active');
-    });
-
-    window.addEventListener('load', () => {
-      const uploader = uploadthing.createUploader({
-        container: document.getElementById('upload-container'),
-        token: 'eyJhcGlLZXkiOiJza19saXZlX2U1M2IwOGM3YTA5MjQ3MWQ5N2JkYzJjODk1M2Y3OGExNzc1NGViYmI4YmZjMTY0M2QyYTFmYTYyNzQ5ODIzZjYiLCJhcHBJZCI6ImptN2JycHQzdXAiLCJyZWdpb25zIjpbInNlYTEiXX0=',
-        maxFiles: 10,
-        onUploadComplete: () => {
-          document.getElementById('thank-you').style.display = 'block';
-        }
-      });
     });
   </script>
 </body>
