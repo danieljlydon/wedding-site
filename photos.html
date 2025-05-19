@@ -12,6 +12,7 @@
       background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #F5EFE6;
+      background-color: rgba(0, 0, 0, 0.6);
     }
     header {
       text-align: center;
@@ -31,15 +32,21 @@
     nav {
       background: #F5EFE6;
       padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
     .menu {
       display: flex;
       justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap;
+      width: 100%;
     }
     nav a {
       text-decoration: none;
-      color: rgba(0, 0, 0, 0.6);
+      color: #1F4E47;
       font-weight: bold;
     }
     .hamburger {
@@ -50,12 +57,14 @@
     .hamburger span {
       height: 3px;
       width: 25px;
-      background: rgba(0, 0, 0, 0.6);
+      background: #1F4E47;
       margin: 4px 0;
       border-radius: 2px;
     }
     @media (max-width: 768px) {
-      .hamburger { display: flex; }
+      .hamburger {
+        display: flex;
+      }
       .menu {
         display: none;
         flex-direction: column;
@@ -63,7 +72,9 @@
         margin-top: 1rem;
         text-align: center;
       }
-      .menu.active { display: flex; }
+      .menu.active {
+        display: flex;
+      }
     }
     section {
       max-width: 900px;
@@ -72,47 +83,28 @@
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-      text-align: center;
     }
-    input[type="file"] {
-      margin-top: 1rem;
-      background: #fff;
-      padding: 0.5rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      color: #000;
-    }
-    button[type="submit"] {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
-      color: white;
+    iframe {
+      width: 100%;
+      height: 1200px;
       border: none;
       border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #thank-you {
-      display: none;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-      color: #F5EFE6;
+      background-color: white;
     }
     footer {
       text-align: center;
       padding: 2rem;
       background: #F5EFE6;
-      color: rgba(0, 0, 0, 0.6);
+      color: #1F4E47;
     }
   </style>
 </head>
-<body style="background-color: rgba(0, 0, 0, 0.6);">
+<body>
   <header>
-    <h1>Daniel & Makenzie's Wedding</h1>
+    <h1>Daniel &amp; Makenzie's Wedding</h1>
     <p>October 11, 2025</p>
     <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
   </header>
-
   <nav>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
@@ -123,27 +115,21 @@
       <a href="details.html">Wedding Info</a>
       <a href="photos.html">Upload Photos</a>
       <a href="registry.html">Registry</a>
-      <a href="travel.html">Travel & Lodging</a>
+      <a href="travel.html">Travel &amp; Lodging</a>
       <a href="music.html">Music</a>
       <a href="guestbook.html">Guestbook</a>
     </div>
   </nav>
-
   <section>
-    <h2>Share Your Favorite Wedding Moments!</h2>
-    <p>Upload directly below — no login needed 💕</p>
-    <form id="upload-form" enctype="multipart/form-data" method="POST" action="https://formbold.com/s/6ZrgO">
-      <input type="file" name="photo" accept="image/*" required>
-      <br>
-      <button type="submit">📸 Upload Photo</button>
-    </form>
-    <p id="thank-you">🎉 Thank you for sharing your memory with us!</p>
+    <h2>Upload Your Wedding Photos</h2>
+    <p style="text-align: center; font-size: 1.1rem;">
+      Snap a pic, upload it here, and share the love — it's super easy!
+    </p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMt_DcUG7baHYJeSd63dXGrsf9HdZXgnA-mc5I-uswyJOdQg/viewform?embedded=true">Loading…</iframe>
   </section>
-
   <footer>
-    <p>Made with love by Daniel & Makenzie ❤️</p>
+    <p>Made with love by Daniel &amp; Makenzie ❤️</p>
   </footer>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const hamburger = document.getElementById('hamburger');
@@ -153,14 +139,6 @@
           menu.classList.toggle('active');
         });
       }
-
-      const form = document.getElementById('upload-form');
-      const thankYou = document.getElementById('thank-you');
-      form.addEventListener('submit', function () {
-        setTimeout(() => {
-          thankYou.style.display = 'block';
-        }, 500);
-      });
     });
   </script>
 </body>
