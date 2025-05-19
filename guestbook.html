@@ -168,37 +168,30 @@
         body: formData
       });
 
-      // Thank-you message
-      const thankYouMsg = document.createElement('p');
-      thankYouMsg.textContent = "💖 Thank you for your kind words!";
-      thankYouMsg.style.marginTop = "1rem";
-      thankYouMsg.style.background = "rgba(255, 255, 255, 0.1)";
-      thankYouMsg.style.padding = "1rem";
-      thankYouMsg.style.borderRadius = "8px";
-      thankYouMsg.style.color = "#F5EFE6";
-      thankYouMsg.style.fontWeight = "bold";
-      thankYouMsg.style.textAlign = "center";
-      thankYouMsg.style.animation = "fadeInPulse 1.5s ease-out";
-
-      form.appendChild(thankYouMsg);
       form.reset();
 
-      // Floating heart
-      const floatHeart = document.createElement('div');
-      floatHeart.textContent = "❤️";
-      floatHeart.style.position = "fixed";
-      floatHeart.style.bottom = "-40px";
-      floatHeart.style.left = Math.random() * 100 + "vw";
-      floatHeart.style.fontSize = "2rem";
-      floatHeart.style.animation = "floatUp 4s ease-in forwards";
-      floatHeart.style.zIndex = "9999";
-      document.body.appendChild(floatHeart);
+      // Big heart animation
+      const bigHeartContainer = document.createElement('div');
+      bigHeartContainer.className = 'heart-popup';
 
-      setTimeout(() => floatHeart.remove(), 4000);
+      const heart = document.createElement('div');
+      heart.className = 'big-heart';
+      heart.textContent = "❤️";
+
+      const msg = document.createElement('div');
+      msg.className = 'heart-message';
+      msg.textContent = "Thank you from the bottom of our hearts";
+
+      bigHeartContainer.appendChild(heart);
+      bigHeartContainer.appendChild(msg);
+      document.body.appendChild(bigHeartContainer);
+
+      setTimeout(() => {
+        bigHeartContainer.remove();
+      }, 4000); // remove after animation completes
     });
   });
 </script>
-
 <style>
   @keyframes fadeInPulse {
     0% { opacity: 0; transform: scale(0.95); }
@@ -209,6 +202,68 @@
   @keyframes floatUp {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(-120vh); opacity: 0; }
+  }
+
+  .heart-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 9999;
+    animation: fadeOut 4s forwards;
+  }
+
+  .big-heart {
+    font-size: 4rem;
+    animation: growHeart 1.5s ease-out forwards;
+  }
+
+  .heart-message {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #F5EFE6;
+    opacity: 0;
+    animation: showMessage 2s 1.2s forwards;
+    font-weight: bold;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  @keyframes growHeart {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(3.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes showMessage {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; pointer-events: none; }
   }
 </style>
 </body>
