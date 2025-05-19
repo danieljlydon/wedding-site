@@ -167,9 +167,49 @@
         method: "POST",
         body: formData
       });
-      window.location.href = "guestbook-thankyou.html";
+
+      // Thank-you message
+      const thankYouMsg = document.createElement('p');
+      thankYouMsg.textContent = "💖 Thank you for your kind words!";
+      thankYouMsg.style.marginTop = "1rem";
+      thankYouMsg.style.background = "rgba(255, 255, 255, 0.1)";
+      thankYouMsg.style.padding = "1rem";
+      thankYouMsg.style.borderRadius = "8px";
+      thankYouMsg.style.color = "#F5EFE6";
+      thankYouMsg.style.fontWeight = "bold";
+      thankYouMsg.style.textAlign = "center";
+      thankYouMsg.style.animation = "fadeInPulse 1.5s ease-out";
+
+      form.appendChild(thankYouMsg);
+      form.reset();
+
+      // Floating heart
+      const floatHeart = document.createElement('div');
+      floatHeart.textContent = "❤️";
+      floatHeart.style.position = "fixed";
+      floatHeart.style.bottom = "-40px";
+      floatHeart.style.left = Math.random() * 100 + "vw";
+      floatHeart.style.fontSize = "2rem";
+      floatHeart.style.animation = "floatUp 4s ease-in forwards";
+      floatHeart.style.zIndex = "9999";
+      document.body.appendChild(floatHeart);
+
+      setTimeout(() => floatHeart.remove(), 4000);
     });
   });
 </script>
+
+<style>
+  @keyframes fadeInPulse {
+    0% { opacity: 0; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+  }
+</style>
 </body>
 </html>
