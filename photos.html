@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upload Photos - Daniel & Makenzie's Wedding</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
@@ -85,30 +85,12 @@
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
       text-align: center;
     }
-    input[type="file"] {
-      margin: 1rem auto;
-      display: block;
-      font-size: 1rem;
-    }
-    button {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
-      color: white;
+    iframe {
+      width: 100%;
+      height: 1100px;
       border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .thank-you {
-      margin-top: 1.5rem;
-      font-size: 1.3rem;
-      color: #F5EFE6;
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      border-radius: 12px;
+      background: white;
     }
     footer {
       text-align: center;
@@ -140,14 +122,9 @@
     </div>
   </nav>
   <section>
-    <h2>Share Your Wedding Day Photos & Videos</h2>
-    <p>We’d love to see the moments you captured! Upload up to 10 files below.</p>
-    <form action="https://script.google.com/macros/s/AKfycbxl-GxhWPkypcMTM7UENQSANWk1WnhUuQyOok0uMXb0AkgdpZ_m9rOs9P19adJ1UoHZ/exec" method="post" enctype="multipart/form-data" target="_blank">
-
-      <input type="file" name="file" accept="image/*,video/*" required multiple>
-      <button type="submit">Upload Files</button>
-    </form>
-    <div class="thank-you" id="thank-you" style="display: none;">❤️ Thank you for sharing your memories!</div>
+    <h2>Upload Your Wedding Day Photos & Videos</h2>
+    <p>Snap a pic, upload it here, and share your moments with us—it's super easy!</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMt_DcUG7baHYJeSd63dXGrsf9HdZXgnA-mc5I-uswyJOdQg/viewform?embedded=true" allowfullscreen>Loading…</iframe>
   </section>
   <footer>
     <p>Made with love by Daniel &amp; Makenzie ❤️</p>
