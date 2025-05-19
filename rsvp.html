@@ -55,6 +55,17 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .attending-details {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.4s ease;
+    }
+    .attending-details.show {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
     .floating {
       position: fixed;
       bottom: -50px;
@@ -81,8 +92,12 @@
         <option value="Yes">Yes</option>
         <option value="No">Sorry, I can’t make it</option>
       </select>
-      <input id="adults" min="0" name="adults" placeholder="Number of Adults" required type="number"/>
-      <input id="kids" min="0" name="kids" placeholder="Number of Kids" required type="number"/>
+
+      <div class="attending-details" id="attending-details">
+        <input id="adults" min="0" name="adults" placeholder="Number of Adults" type="number"/>
+        <input id="kids" min="0" name="kids" placeholder="Number of Kids" type="number"/>
+      </div>
+
       <textarea name="message" placeholder="Leave us a message!" required rows="4"></textarea>
       <button type="submit">Submit RSVP</button>
     </form>
@@ -92,14 +107,19 @@
     const attending = document.getElementById('attending');
     const adults = document.getElementById('adults');
     const kids = document.getElementById('kids');
+    const attendingDetails = document.getElementById('attending-details');
 
     attending.addEventListener('change', () => {
-      const notAttending = attending.value === "No";
-      adults.disabled = notAttending;
-      kids.disabled = notAttending;
-      adults.required = !notAttending;
-      kids.required = !notAttending;
-      if (notAttending) {
+      const isYes = attending.value === "Yes";
+      adults.disabled = !isYes;
+      kids.disabled = !isYes;
+      adults.required = isYes;
+      kids.required = isYes;
+
+      if (isYes) {
+        attendingDetails.classList.add('show');
+      } else {
+        attendingDetails.classList.remove('show');
         adults.value = "";
         kids.value = "";
       }
