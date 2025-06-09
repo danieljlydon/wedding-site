@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -13,6 +12,7 @@
       background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #F5EFE6;
+      animation: zoomIn 30s ease-in-out infinite alternate;
     }
     header {
       text-align: center;
@@ -28,6 +28,16 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    .rsvp-button.secondary {
+      background-color: #4682B4;
+      margin-left: 1rem;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
     }
     nav {
       background: #F5EFE6;
@@ -73,6 +83,8 @@
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+      z-index: 2;
+      position: relative;
     }
     footer {
       text-align: center;
@@ -80,13 +92,59 @@
       background: #F5EFE6;
       color: #1F4E47;
     }
-  </style>
+    @keyframes zoomIn {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 105%;
+      }
+    }
+    /* Falling Leaves */
+    .leaves {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .leaf {
+      position: absolute;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.imgur.com/Hh5UGTz.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: fall 10s linear infinite;
+    }
+    .leaf:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+    }
+    .leaf:nth-child(2) {
+      left: 50%;
+      animation-delay: 2s;
+    }
+    .leaf:nth-child(3) {
+      left: 80%;
+      animation-delay: 4s;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+</style>
 </head>
-<body style="background-color: rgba(0, 0, 0, 0.6);">
+<body>
 <header>
 <h1>Daniel &amp; Makenzie's Wedding</h1>
 <p>October 11, 2025</p>
-<a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+<a class="rsvp-button pulse" href="rsvp.html">RSVP Here</a>
+<a class="rsvp-button pulse secondary" href="story.html">Our Story</a>
 </header>
 <nav>
 <div class="hamburger" id="hamburger">
@@ -114,6 +172,12 @@
 <footer>
 <p>Made with love by Daniel &amp; Makenzie ❤️</p>
 </footer>
+<!-- Falling Leaves -->
+<div class="leaves">
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+</div>
 <!-- Hamburger Menu Script -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -125,7 +189,7 @@
         });
       }
     });
-  </script>
+</script>
 <!-- Countdown Script -->
 <script>
     const targetDate = new Date("October 11, 2025 14:00:00").getTime();
@@ -146,6 +210,6 @@
     }
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
-  </script>
+</script>
 </body>
 </html>
