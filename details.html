@@ -1,196 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wedding Info</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: url('bg-details.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #F5EFE6;
-    }
-    header {
-      text-align: center;
-      padding: 4rem 2rem 2rem;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .rsvp-button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .rsvp-button:hover {
-      background-color: #b85613;
-    }
-    nav {
-      background: #F5EFE6;
-      padding: 1rem;
-    }
-    .menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1F4E47;
-      font-weight: bold;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #1F4E47;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .menu {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
-        text-align: center;
-      }
-      .menu.active { display: flex; }
-    }
-    section {
-      max-width: 850px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.65);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-      line-height: 1.8;
-    }
-    h2, h3 {
-      color: #FFDAB9;
-      margin-top: 0;
-    }
-    .schedule {
-      list-style: none;
-      padding: 0;
-    }
-    .schedule li {
-      margin: 1rem 0;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-    .schedule li::before {
-      content: "⏰";
-      position: absolute;
-      left: 0;
-    }
-    .dress-section {
-      margin-top: 2rem;
-    }
-    .dress-section h4 {
-      margin-bottom: 0.5rem;
-      color: #fddbb5;
-    }
-    iframe {
-      border: 0;
-      border-radius: 10px;
-      margin-top: 1.5rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #F5EFE6;
-      color: #1F4E47;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Daniel &amp; Makenzie's Wedding</h1>
-    <p>October 11, 2025</p>
-    <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
-  </header>
-  <nav>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="menu" id="menu">
-      <a href="index.html">Home</a>
-      <a href="story.html">Our Story</a>
-      <a href="details.html">Wedding Info</a>
-      <a href="photos.html">Upload Photos</a>
-      <a href="registry.html">Registry</a>
-      <a href="travel.html">Travel &amp; Lodging</a>
-      <a href="music.html">Music</a>
-      <a href="guestbook.html">Guestbook</a>
-    </div>
-  </nav>
+<section>
+  <h2>Wedding Info</h2>
 
-  <section>
-    <h2>Wedding Info</h2>
+  <ul>
+    <li><strong>Date:</strong> October 11, 2025</li>
+    <li><strong>Time:</strong> Ceremony at 2:00 PM <br><em style="color: #fddbb5;">Guests must be seated by 2:00 PM sharp</em></li>
+    <li><strong>Location:</strong> 8109 Branch Rd., Medina, Ohio 44256</li>
+  </ul>
 
-    <ul>
-      <li><strong>Date:</strong> October 11, 2025</li>
-      <li><strong>Time:</strong> Ceremony at 2:00 PM (Music starts at 1:30 PM)</li>
-      <li><strong>Location:</strong> 8109 Branch Rd., Medina, Ohio 44256</li>
-    </ul>
+  <h3>Event Schedule</h3>
+  <ul class="schedule" style="list-style: none; padding-left: 0;">
+    <li><strong>1:30 PM</strong> – Music Begins</li>
+    <li><strong>2:00 PM</strong> – Ceremony</li>
+    <li><strong>3:00 PM</strong> – Cocktail Hour</li>
+    <li><strong>4:00 PM</strong> – Dinner is Served</li>
+    <li><strong>5:00 PM</strong> – Dancing & Celebration</li>
+  </ul>
 
-    <h3>📅 Event Schedule</h3>
-    <ul class="schedule">
-      <li><strong>1:30 PM</strong> – Music Begins</li>
-      <li><strong>2:00 PM</strong> – Ceremony</li>
-      <li><strong>3:00 PM</strong> – Cocktail Hour</li>
-      <li><strong>4:00 PM</strong> – Dinner is Served</li>
-      <li><strong>5:00 PM</strong> – Dancing & Celebration</li>
-    </ul>
+  <div class="dress-section">
+    <h3>Dress Code</h3>
+    <h4>Gentlemen:</h4>
+    <p>Western Formal — button-down shirts, dark jeans or slacks, boots, and cowboy hats welcome. The groom will be in a light blazer to set the tone. Comfort and class are key.</p>
 
-    <div class="dress-section">
-      <h3>👗 Dress Code</h3>
-      <h4>Gentlemen:</h4>
-      <p>Western Formal — button-down shirts, dark jeans or slacks, boots, and cowboy hats welcome. The groom will be in a light blazer to set the tone. Comfort and class are key.</p>
+    <h4>Ladies:</h4>
+    <p>Floral or flowy dresses in soft or earthy tones with cowgirl boots are perfect. Think rustic romance — braids, hats, or florals in your hair encouraged!</p>
+  </div>
 
-      <h4>Ladies:</h4>
-      <p>Floral or flowy dresses in soft or earthy tones with cowgirl boots are perfect. Think rustic romance — braids, hats, or florals in your hair encouraged!</p>
-    </div>
-
-    <h3>📍 Venue Map & Directions</h3>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.973941598848!2d-81.89509898462491!3d41.09970947929268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8830fe34ea064b0d%3A0x1c8617b2b11d8105!2s8109%20Branch%20Rd%2C%20Medina%2C%20OH%2044256!5e0!3m2!1sen!2sus!4v1715224144740!5m2!1sen!2sus" 
-      width="100%" 
-      height="300" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
-
-  <footer>
-    <p>Made with love by Daniel &amp; Makenzie ❤️</p>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+  <h3>Venue Map & Directions</h3>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.973941598848!2d-81.89509898462491!3d41.09970947929268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8830fe34ea064b0d%3A0x1c8617b2b11d8105!2s8109%20Branch%20Rd%2C%20Medina%2C%20OH%2044256!5e0!3m2!1sen!2sus!4v1715224144740!5m2!1sen!2sus" 
+    width="100%" 
+    height="300" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"
+    style="border:0; border-radius: 10px;">
+  </iframe>
+</section>
