@@ -9,8 +9,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif; /* unified */
-  font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', serif;
       background: url('Snapchat-1979051471.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
@@ -21,6 +20,15 @@
       overflow: hidden;
       background-color: rgba(0, 0, 0, 0.6);
     }
+
+    @media (min-width: 1024px) {
+      body {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
     .form-card {
       background: rgba(0, 0, 0, 0.6);
       padding: 2rem;
@@ -45,8 +53,7 @@
       padding: 0.75rem;
       border: none;
       border-radius: 8px;
-      font-family: 'Open Sans', sans-serif; /* unified */
-  font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1rem;
     }
     button {
@@ -83,23 +90,23 @@
     }
   </style>
 
-<style>
-  #spinner {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    z-index: 9999;
-  }
-</style>
-
+  <style>
+    #spinner {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      z-index: 9999;
+    }
+  </style>
 </head>
+
 <body>
   <div class="form-card">
     <h1>You're Invited!</h1>
@@ -122,6 +129,7 @@
       <button type="submit">Submit RSVP</button>
     </form>
   </div>
+
   <script>
     const form = document.getElementById('rsvp-form');
     const attending = document.getElementById('attending');
@@ -169,18 +177,16 @@
     setInterval(createFloatingEmoji, 250);
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-    if (form) {
-      form.addEventListener("submit", function () {
-        const spinner = document.getElementById("spinner");
-        if (spinner) spinner.style.display = "block";
-      });
-    }
-  });
-</script>
-
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      if (form) {
+        form.addEventListener("submit", function () {
+          const spinner = document.getElementById("spinner");
+          if (spinner) spinner.style.display = "block";
+        });
+      }
+    });
+  </script>
 </body>
 </html>
