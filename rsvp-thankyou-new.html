@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thank You – Daniel &amp; Makenzie</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Thank You – Daniel & Makenzie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
+  <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: url('Snapchat-1979051471.jpg') no-repeat center center fixed;
+      background: url('barn look.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -19,11 +18,22 @@
       color: #F5EFE6;
       flex-direction: column;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
     }
+
+    @media (min-width: 1024px) {
+      body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
+
     .home-button {
       margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
@@ -36,6 +46,7 @@
       text-decoration: none;
       font-size: 1.2rem;
     }
+
     .form-container {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 2rem;
@@ -45,12 +56,14 @@
       width: 90%;
       text-align: left;
     }
+
     label {
       display: block;
       margin-top: 1rem;
       font-weight: bold;
       font-size: 1.1rem;
     }
+
     input, textarea, button {
       width: 100%;
       margin-top: 0.5rem;
@@ -59,6 +72,7 @@
       border: none;
       font-family: 'Playfair Display', serif;
     }
+
     button {
       background-color: #D2691E;
       color: white;
@@ -66,9 +80,11 @@
       cursor: pointer;
       margin-top: 1.5rem;
     }
+
     #music-status {
       margin-top: 1rem;
     }
+
     .floating {
       position: absolute;
       bottom: -50px;
@@ -76,42 +92,38 @@
       animation: floatUp 5s ease-in infinite;
       pointer-events: none;
     }
+
     @keyframes floatUp {
       0% { transform: translateY(0) scale(1); opacity: 1; }
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
-  
-    .floating {
-      position: absolute;
-      bottom: -50px;
-      font-size: 2rem;
-      animation: floatUp 5s ease-in infinite;
-      pointer-events: none;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
-    }
-    </style>
+  </style>
 </head>
-<body style="background-color: rgba(0, 0, 0, 0.6);">
-<h1>Thank you for your RSVP!</h1>
-<a class="home-button" href="index.html">Back to Home</a>
-<div class="form-container">
-<h2 style="text-align:center;">Request a Song 🎶</h2>
-<form id="music-form">
-<input name="FormType" type="hidden" value="MusicRequest"/>
-<label for="name">Your Name:</label>
-<input id="name" name="Name" required="" type="text"/>
-<label for="song">Favorite Country Love Song:</label>
-<input id="song" name="Song" required="" type="text"/>
-<label for="note">Anything else you'd like to tell us?</label>
-<textarea id="note" name="Note" rows="4"></textarea>
-<button type="submit">Submit Song Request</button>
-<p id="music-status"></p>
-</form>
-</div>
-<script>
+
+<body>
+  <h1>Thank you for your RSVP!</h1>
+  <a class="home-button" href="index.html">Back to Home</a>
+
+  <div class="form-container">
+    <h2 style="text-align:center;">Request a Song 🎶</h2>
+    <form id="music-form">
+      <input type="hidden" name="FormType" value="MusicRequest"/>
+      
+      <label for="name">Your Name:</label>
+      <input id="name" name="Name" required type="text"/>
+      
+      <label for="song">Favorite Dancing Song:</label>
+      <input id="song" name="Song" required type="text"/>
+      
+      <label for="note">Anything else you'd like to tell us?</label>
+      <textarea id="note" name="Note" rows="4"></textarea>
+      
+      <button type="submit">Submit Song Request</button>
+      <p id="music-status"></p>
+    </form>
+  </div>
+
+  <script>
     function createFloatingEmoji() {
       const emojis = ['💖', '💋', '😘', '💕', '💞', '💘'];
       const emoji = document.createElement('div');
@@ -122,6 +134,7 @@
       document.body.appendChild(emoji);
       setTimeout(() => emoji.remove(), 5000);
     }
+
     setInterval(createFloatingEmoji, 250);
 
     document.getElementById("music-form").addEventListener("submit", function(e) {
@@ -148,8 +161,6 @@
         status.textContent = "There was an error submitting the form.";
       });
     });
-  
-    setInterval(createFloatingEmoji, 250);
-    </script>
+  </script>
 </body>
 </html>
