@@ -76,20 +76,30 @@
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
       text-align: center;
     }
+    .registry-message {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
     .registry-button {
       display: inline-block;
-      margin-top: 2rem;
+      margin-top: 1rem;
       padding: 1rem 2rem;
       font-size: 1.25rem;
-      background-color: #F5EFE6;
-      color: #222;
+      background-color: #D2691E;
+      color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      animation: pulse 1.5s infinite;
       transition: background 0.3s;
     }
     .registry-button:hover {
-      background-color: #ddd;
+      background-color: #b85c1a;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     footer {
       text-align: center;
@@ -124,8 +134,10 @@
 
 <section>
   <h2>Our Registry</h2>
+  <p class="registry-message">
+    We’re so excited to start our life together! If you’d like to help us fill our home with love (and a few essentials), you’ll find our registry below.
+  </p>
 
-  <!-- Centered registry button only -->
   <a href="https://www.amazon.com/wedding/registry/3LTQ82DURPN7D" target="_blank" class="registry-button">
     🎁 View Our Amazon Registry
   </a>
