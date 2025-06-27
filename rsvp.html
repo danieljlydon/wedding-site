@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>RSVP – Daniel & Makenzie</title>
@@ -8,7 +9,8 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Open Sans', sans-serif; /* unified */
+  font-family: 'Playfair Display', serif;
       background: url('Snapchat-1979051471.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
@@ -43,7 +45,8 @@
       padding: 0.75rem;
       border: none;
       border-radius: 8px;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Open Sans', sans-serif; /* unified */
+  font-family: 'Playfair Display', serif;
       font-size: 1rem;
     }
     button {
@@ -79,6 +82,23 @@
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
   </style>
+
+<style>
+  #spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    z-index: 9999;
+  }
+</style>
+
 </head>
 <body>
   <div class="form-card">
@@ -148,5 +168,19 @@
 
     setInterval(createFloatingEmoji, 250);
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    if (form) {
+      form.addEventListener("submit", function () {
+        const spinner = document.getElementById("spinner");
+        if (spinner) spinner.style.display = "block";
+      });
+    }
+  });
+</script>
+
+
 </body>
 </html>
