@@ -22,6 +22,16 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    .rsvp-button.secondary {
+      background-color: #4682B4;
+      margin-left: 1rem;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
     }
     nav {
       background: #F5EFE6;
@@ -34,7 +44,7 @@
     }
     nav a {
       text-decoration: none;
-      color: rgba(0, 0, 0, 0.6);
+      color: #1F4E47;
       font-weight: bold;
     }
     .hamburger {
@@ -45,7 +55,7 @@
     .hamburger span {
       height: 3px;
       width: 25px;
-      background: rgba(0, 0, 0, 0.6);
+      background: #1F4E47;
       margin: 4px 0;
       border-radius: 2px;
     }
@@ -59,76 +69,34 @@
         text-align: center;
       }
       .menu.active { display: flex; }
-    }
-
-    .timeline {
-      position: relative;
-      margin: 4rem auto;
-      padding: 0 1rem;
-      max-width: 800px;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 20px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #F5EFE6;
-    }
-    .timeline-entry {
-      position: relative;
-      margin-left: 60px;
-      margin-bottom: 3rem;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-    }
-    .timeline-entry::before {
-      content: "";
-      position: absolute;
-      left: -40px;
-      top: 20px;
-      width: 20px;
-      height: 20px;
-      background: #D2691E;
-      border: 3px solid #F5EFE6;
-      border-radius: 50%;
-    }
-    .timeline-entry h2 {
-      margin-top: 0;
-      font-size: 1.25rem;
-      color: #F5EFE6;
-    }
-    .timeline-entry p {
-      margin: 0.5rem 0 1rem;
-    }
-    .photos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .photos img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-      object-fit: cover;
-    }
-    @media (min-width: 768px) {
-      .photos img {
-        max-width: 45%;
+      body {
+        animation: none !important;
+        background-size: cover !important;
       }
     }
-
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+      z-index: 2;
+      position: relative;
+    }
     footer {
       text-align: center;
       padding: 2rem;
       background: #F5EFE6;
-      color: rgba(0, 0, 0, 0.6);
+      color: #1F4E47;
+    }
+    @keyframes zoomIn {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 105%;
+      }
     }
 </style>
 </head>

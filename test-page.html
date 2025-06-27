@@ -9,21 +9,9 @@
   <style>
     body { font-family: 'Playfair Display', serif; }
     header {
-      padding: 4rem 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    h2 {
-      font-size: 2rem;
-      margin: 1rem 0;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 1rem auto;
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
     }
     .rsvp-button {
       display: inline-block;
@@ -32,42 +20,19 @@
       background-color: #D2691E;
       color: white;
       border-radius: 8px;
-      font-weight: bold;
       text-decoration: none;
-      font-size: 1.2rem;
-      transition: transform 0.2s ease;
+      font-weight: bold;
+      animation: pulse 2s infinite;
     }
-    .rsvp-button:hover {
-      transform: scale(1.05);
+    .rsvp-button.secondary {
+      background-color: #4682B4;
+      margin-left: 1rem;
     }
-    .countdown {
-      font-size: 2rem;
-      margin: 2rem 0;
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
     }
-    .section {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      margin: 2rem auto;
-      border-radius: 12px;
-      max-width: 900px;
-    }
-    .floating {
-      position: absolute;
-      bottom: -50px;
-      font-size: 2rem;
-      animation: floatUp 5s ease-in infinite;
-      pointer-events: none;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
-    }
-    iframe {
-      border: none;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-  
     nav {
       background: #F5EFE6;
       padding: 1rem;
@@ -76,7 +41,6 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      flex-wrap: wrap;
     }
     nav a {
       text-decoration: none;
@@ -85,20 +49,18 @@
     }
     .hamburger {
       display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #1F4E47;
+      margin: 4px 0;
+      border-radius: 2px;
     }
     @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-      }
-      .hamburger span {
-        height: 3px;
-        width: 25px;
-        background: #1F4E47;
-        margin: 4px 0;
-        border-radius: 2px;
-      }
+      .hamburger { display: flex; }
       .menu {
         display: none;
         flex-direction: column;
@@ -106,32 +68,37 @@
         margin-top: 1rem;
         text-align: center;
       }
-      .menu.active {
-        display: flex;
+      .menu.active { display: flex; }
+      body {
+        animation: none !important;
+        background-size: cover !important;
       }
     }
-    
-    .play-button-container {
-      margin-top: 1rem;
-    }
-    
-.heart-button {
-      font-size: 2rem;
-      width: 80px;
-      height: 80px;
-      border: none;
-      border-radius: 50%;
-      background: radial-gradient(circle, #ff4d4d 0%, #cc0000 100%);
-      color: white;
-      cursor: pointer;
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+      z-index: 2;
       position: relative;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
     }
-    .heart-button:hover {
-      transform: scale(1.1);
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #F5EFE6;
+      color: #1F4E47;
     }
-    </style>
+    @keyframes zoomIn {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 105%;
+      }
+    }
+</style>
 </head>
 <body>
 

@@ -22,6 +22,16 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    .rsvp-button.secondary {
+      background-color: #4682B4;
+      margin-left: 1rem;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
     }
     nav {
       background: #F5EFE6;
@@ -59,6 +69,10 @@
         text-align: center;
       }
       .menu.active { display: flex; }
+      body {
+        animation: none !important;
+        background-size: cover !important;
+      }
     }
     section {
       max-width: 800px;
@@ -67,32 +81,8 @@
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-      text-align: center;
-    }
-    .registry-message {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .registry-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.25rem;
-      background-color: #D2691E;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      animation: pulse 1.5s infinite;
-      transition: background 0.3s;
-    }
-    .registry-button:hover {
-      background-color: #b85c1a;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      z-index: 2;
+      position: relative;
     }
     footer {
       text-align: center;
@@ -100,7 +90,15 @@
       background: #F5EFE6;
       color: #1F4E47;
     }
-  </style>
+    @keyframes zoomIn {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 105%;
+      }
+    }
+</style>
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.6);">
 <header>
