@@ -1,140 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photos – Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upload Photos - Daniel & Makenzie's Wedding</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif; /* unified */
-  font-family: 'Playfair Display', serif;
+      font-family: 'Open Sans', sans-serif;
       background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #F5EFE6;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-    header {
-      text-align: center;
-      padding: 4rem 2rem 2rem;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .rsvp-button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #D2691E;
       color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav {
-      background: #F5EFE6;
-      padding: 1rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .menu {
-      display: flex;
       justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1F4E47;
-      font-weight: bold;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #1F4E47;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-      .menu {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
-        text-align: center;
-      }
-      .menu.active {
-        display: flex;
-      }
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      height: 1100px;
-      border: none;
-      border-radius: 12px;
-      background: white;
-    }
-    footer {
+      height: 100vh;
       text-align: center;
       padding: 2rem;
-      background: #F5EFE6;
-      color: #1F4E47;
+    }
+    .message {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Daniel &amp; Makenzie's Wedding</h1>
-    <p>October 11, 2025</p>
-    <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
-  </header>
-  <nav>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="menu" id="menu">
-      <a href="index.html">Home</a>
-      <a href="story.html">Our Story</a>
-      <a href="details.html">Wedding Info</a>
-      <a href="photos.html">Upload Photos</a>
-      <a href="registry.html">Registry</a>
-      <a href="travel.html">Travel & Lodging</a>
-      <a href="music.html">Music</a>
-      <a href="guestbook.html">Guestbook</a>
-    </div>
-  </nav>
-  <section>
-    <h2>Upload Your Wedding Day Photos & Videos</h2>
-    <p>Snap a pic, upload it here, and share your moments with us—it's super easy!</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMt_DcUG7baHYJeSd63dXGrsf9HdZXgnA-mc5I-uswyJOdQg/viewform?embedded=true" allowfullscreen>Loading…</iframe>
-  </section>
-  <footer>
-    <p>Made with love by Daniel &amp; Makenzie ❤️</p>
-  </footer>
-  <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('menu').classList.toggle('active');
-    });
-  </script>
+  <div class="message">
+    <h1>Photo Uploads Coming Soon</h1>
+    <p>We're setting up a space for guests to share their favorite memories. Please check back closer to the wedding!</p>
+  </div>
 </body>
 </html>
