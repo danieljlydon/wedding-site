@@ -2,112 +2,97 @@
 
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Thank You – Daniel &amp; Makenzie</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
 <style>
-    body { font-family: 'Playfair Display', serif; }
-    header {
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: url('Snapchat-1979051471.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #F5EFE6;
+      flex-direction: column;
       text-align: center;
-      padding: 4rem 2rem 2rem;
-      background: rgba(0, 0, 0, 0.5);
     }
-    .rsvp-button {
-      display: inline-block;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .home-button {
       margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
       background-color: #D2691E;
       color: white;
+      border: none;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      animation: pulse 2s infinite;
-    }
-    .rsvp-button.secondary {
-      background-color: #4682B4;
-      margin-left: 1rem;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
-    }
-    nav {
-      background: #F5EFE6;
-      padding: 1rem;
-    }
-    .menu {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1F4E47;
-      font-weight: bold;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
       cursor: pointer;
+      text-decoration: none;
+      font-size: 1.2rem;
     }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #1F4E47;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .menu {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
-        text-align: center;
-      }
-      .menu.active { display: flex; }
-      body {
-        animation: none !important;
-        background-size: cover !important;
-      }
-    }
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1.5rem;
+    .form-container {
       background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-      z-index: 2;
-      position: relative;
-    }
-    footer {
-      text-align: center;
       padding: 2rem;
-      background: #F5EFE6;
-      color: #1F4E47;
+      margin-top: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
     }
-    @keyframes zoomIn {
-      0% {
-        background-size: 100%;
-      }
-      100% {
-        background-size: 105%;
-      }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
-</style>
+    input, textarea, button {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Playfair Display', serif;
+    }
+    button {
+      background-color: #D2691E;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+    }
+    #music-status {
+      margin-top: 1rem;
+    }
+    .floating {
+      position: absolute;
+      bottom: -50px;
+      font-size: 2rem;
+      animation: floatUp 5s ease-in infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+  
+    .floating {
+      position: absolute;
+      bottom: -50px;
+      font-size: 2rem;
+      animation: floatUp 5s ease-in infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+    </style>
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.6);">
 <h1>Thank you for your RSVP!</h1>

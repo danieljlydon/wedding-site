@@ -1,21 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daniel &amp; Makenzie's Wedding</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Daniel &amp; Makenzie's Wedding</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-  <style>
-    body { font-family: 'Playfair Display', serif; }
+<style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif; /* unified */
+  font-family: 'Playfair Display', serif;
+      background: url('bg-details.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #F5EFE6;
+    }
     header {
       text-align: center;
       padding: 4rem 2rem 2rem;
@@ -30,16 +30,6 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      animation: pulse 2s infinite;
-    }
-    .rsvp-button.secondary {
-      background-color: #4682B4;
-      margin-left: 1rem;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
     }
     nav {
       background: #F5EFE6;
@@ -77,10 +67,6 @@
         text-align: center;
       }
       .menu.active { display: flex; }
-      body {
-        animation: none !important;
-        background-size: cover !important;
-      }
     }
     section {
       max-width: 800px;
@@ -89,8 +75,6 @@
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
-      z-index: 2;
-      position: relative;
     }
     footer {
       text-align: center;
@@ -98,26 +82,14 @@
       background: #F5EFE6;
       color: #1F4E47;
     }
-    @keyframes zoomIn {
-      0% {
-        background-size: 100%;
-      }
-      100% {
-        background-size: 105%;
-      }
-    }
-</style>
+  </style>
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.6);">
 <header>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<h1 style="font-family: 'Playfair Display', serif; font-size: 2.75rem;">Daniel &amp; Makenzie’s Wedding</h1>
-  <p>October 11, 2025</p>
-<a class="rsvp-button pulse" href="rsvp.html">RSVP Here</a>
-<a class="rsvp-button pulse secondary" href="story.html">Our Story</a>
+<h1>Daniel &amp; Makenzie's Wedding</h1>
+<p>October 11, 2025</p>
+<a class="rsvp-button" href="rsvp.html">RSVP Here</a>
 </header>
-
 <nav>
 <div class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
@@ -133,22 +105,16 @@
 <a href="guestbook.html">Guestbook</a>
 </div>
 </nav>
-
 <section>
-  <h2>Our Registry</h2>
-  <p class="registry-message">
-    Your presence at our wedding is the greatest gift we could ask for. But if you’d like to bless us further, we’ve put together a registry below.
-  </p>
-
-  <a href="https://www.amazon.com/wedding/registry/3LTQ82DURPN7D" target="_blank" class="registry-button">
-    🎁 View Our Amazon Registry
-  </a>
+<h2>Our Registry</h2>
+<ul>
+<li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li>
+<li><a href="https://www.target.com/" target="_blank">Target</a></li>
+</ul>
 </section>
-
 <footer>
-  <p>Made with love by Daniel &amp; Makenzie ❤️</p>
+<p>Made with love by Daniel &amp; Makenzie ❤️</p>
 </footer>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById('hamburger');
