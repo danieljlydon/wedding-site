@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Upload Photos - Daniel & Makenzie's Wedding</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif; /* unified */
-  font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', serif;
       background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #F5EFE6;
-      background-color: rgba(0, 0, 0, 0.6);
+      animation: zoomIn 30s ease-in-out infinite alternate;
     }
     header {
       text-align: center;
@@ -30,21 +28,21 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
     }
     nav {
       background: #F5EFE6;
       padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
     }
     .menu {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      flex-wrap: wrap;
-      width: 100%;
     }
     nav a {
       text-decoration: none;
@@ -64,9 +62,7 @@
       border-radius: 2px;
     }
     @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
+      .hamburger { display: flex; }
       .menu {
         display: none;
         flex-direction: column;
@@ -74,25 +70,21 @@
         margin-top: 1rem;
         text-align: center;
       }
-      .menu.active {
-        display: flex;
+      .menu.active { display: flex; }
+      body {
+        animation: none !important;
       }
     }
     section {
-      max-width: 900px;
+      max-width: 800px;
       margin: 2rem auto;
-      padding: 2rem;
+      padding: 1.5rem;
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+      z-index: 2;
+      position: relative;
       text-align: center;
-    }
-    iframe {
-      width: 100%;
-      height: 1100px;
-      border: none;
-      border-radius: 12px;
-      background: white;
     }
     footer {
       text-align: center;
@@ -100,14 +92,19 @@
       background: #F5EFE6;
       color: #1F4E47;
     }
+    @keyframes zoomIn {
+      0% { background-size: 100%; }
+      100% { background-size: 105%; }
+    }
   </style>
 </head>
-<body>
+<body style="background-color: rgba(0, 0, 0, 0.6);">
   <header>
     <h1>Daniel &amp; Makenzie's Wedding</h1>
     <p>October 11, 2025</p>
     <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
   </header>
+
   <nav>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
@@ -123,17 +120,52 @@
       <a href="guestbook.html">Guestbook</a>
     </div>
   </nav>
+
   <section>
-    <h2>Upload Your Wedding Day Photos & Videos</h2>
-    <p>Snap a pic, upload it here, and share your moments with us—it's super easy!</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMt_DcUG7baHYJeSd63dXGrsf9HdZXgnA-mc5I-uswyJOdQg/viewform?embedded=true" allowfullscreen>Loading…</iframe>
+    <h2>Upload Your Photos</h2>
+    <p style="font-size: 1.25rem;">Photo uploads will be available soon! We can’t wait to see your memories from our big day.</p>
+    <div style="margin-top: 2rem; font-size: 2rem; color: #FFDAB9;">
+      Countdown to the celebration:<br><span id="countdown" style="font-weight: bold;"></span>
+    </div>
   </section>
+
   <footer>
     <p>Made with love by Daniel &amp; Makenzie ❤️</p>
   </footer>
+
   <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('menu').classList.toggle('active');
+    function updateCountdown() {
+      const targetDate = new Date("October 11, 2025 14:00:00 EST").getTime();
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "It’s wedding time!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    setInterval(updateCountdown, 1000);
+    window.onload = updateCountdown;
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      }
     });
   </script>
 </body>
