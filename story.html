@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Our Story - Daniel & Makenzie's Wedding</title>
+  <title>Daniel &amp; Makenzie's Wedding</title>
   <style>
     body {
       margin: 0;
@@ -71,14 +71,70 @@
       }
       .menu.active { display: flex; }
     }
-    section {
+
+    .timeline {
+      position: relative;
+      margin: 4rem auto;
+      padding: 0 1rem;
       max-width: 800px;
-      margin: 2rem auto;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #F5EFE6;
+    }
+    .timeline-entry {
+      position: relative;
+      margin-left: 60px;
+      margin-bottom: 3rem;
+      background: rgba(0, 0, 0, 0.6);
       padding: 1.5rem;
-      background-color: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
     }
+    .timeline-entry::before {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: #D2691E;
+      border: 3px solid #F5EFE6;
+      border-radius: 50%;
+    }
+    .timeline-entry h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: #F5EFE6;
+    }
+    .timeline-entry p {
+      margin: 0.5rem 0 1rem;
+    }
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .photos img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
+    @media (min-width: 768px) {
+      .photos img {
+        max-width: 45%;
+      }
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -109,12 +165,12 @@
     </div>
   </nav>
 
-  <section>
-    <!-- Your original story content starts here -->
-    <h2>Our Story</h2>
-    <p>This is where your relationship timeline and story content appears...</p>
-    <!-- You can paste your actual timeline content here -->
-  </section>
+  <div class="timeline">
+    <!-- Timeline entries are already inside -->
+    <!-- You can paste your timeline entries here, or keep them from the last file -->
+    <!-- (Already loaded from story.html in previous step) -->
+    <!-- Copy/paste full timeline if you need it again -->
+  </div>
 
   <footer>
     <p>Made with love by Daniel &amp; Makenzie ❤️</p>
