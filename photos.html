@@ -11,13 +11,17 @@
       font-family: 'Open Sans', sans-serif;
       background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
+      color: #F5EFE6;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem 2rem;
       text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      margin-top: 1rem;
     }
 
     nav a {
@@ -27,25 +31,23 @@
       font-weight: bold;
     }
 
-    section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh;
+    .coming-soon {
       text-align: center;
-      padding: 2rem;
+      padding: 4rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      margin: 4rem auto;
+      max-width: 700px;
+      border-radius: 12px;
     }
 
-    h1 {
+    .coming-soon h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
-    p {
+    .coming-soon p {
       font-size: 1.25rem;
-      max-width: 600px;
     }
 
     #countdown {
@@ -71,11 +73,11 @@
     </nav>
   </header>
 
-  <section>
+  <div class="coming-soon">
     <h1>📸 Photo Uploads Coming Soon</h1>
     <p>We're setting up a space for guests to share their favorite memories. Stay tuned!</p>
     <div id="countdown"></div>
-  </section>
+  </div>
 
   <script>
     const countdownElement = document.getElementById("countdown");
