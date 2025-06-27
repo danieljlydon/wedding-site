@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Daniel &amp; Makenzie's Wedding</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Daniel & Makenzie's Wedding</title>
+  <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif; /* unified */
-  font-family: 'Playfair Display', serif;
+      font-family: 'Open Sans', sans-serif;
+      font-family: 'Playfair Display', serif;
       background: url('bg-details.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #F5EFE6;
@@ -30,6 +28,12 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     nav {
       background: #F5EFE6;
@@ -85,46 +89,56 @@
   </style>
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.6);">
-<header>
-<h1>Daniel &amp; Makenzie's Wedding</h1>
-<p>October 11, 2025</p>
-<a class="rsvp-button" href="rsvp.html">RSVP Here</a>
-</header>
-<nav>
-<div class="hamburger" id="hamburger">
-<span></span><span></span><span></span>
-</div>
-<div class="menu" id="menu">
-<a href="index.html">Home</a>
-<a href="story.html">Our Story</a>
-<a href="details.html">Wedding Info</a>
-<a href="photos.html">Upload Photos</a>
-<a href="registry.html">Registry</a>
-<a href="travel.html">Travel &amp; Lodging</a>
-<a href="music.html">Music</a>
-<a href="guestbook.html">Guestbook</a>
-</div>
-</nav>
-<section>
-<h2>Our Registry</h2>
-<ul>
-<li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li>
-<li><a href="https://www.target.com/" target="_blank">Target</a></li>
-</ul>
-</section>
-<footer>
-<p>Made with love by Daniel &amp; Makenzie ❤️</p>
-</footer>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    if (hamburger && menu) {
-      hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-    }
-  });
-</script>
+  <header>
+    <h1>Daniel &amp; Makenzie's Wedding</h1>
+    <p>October 11, 2025</p>
+    <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+  </header>
+
+  <nav>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="details.html">Wedding Info</a>
+      <a href="photos.html">Upload Photos</a>
+      <a href="registry.html">Registry</a>
+      <a href="travel.html">Travel & Lodging</a>
+      <a href="music.html">Music</a>
+      <a href="guestbook.html">Guestbook</a>
+    </div>
+  </nav>
+
+  <section>
+    <h2>Our Registry</h2>
+    <p style="font-size: 1.25rem; text-align: center; max-width: 700px; margin: auto;">
+      Your presence at our wedding is the greatest gift we could ask for. But if you’d like to bless us further, we’ve put together a registry below.
+    </p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://www.amazon.com/wedding/registry/3LTQ82DURPN7D" target="_blank"
+         style="display: inline-block; padding: 1rem 2rem; font-size: 1.25rem; background-color: #D2691E; color: white;
+                border-radius: 8px; text-decoration: none; font-weight: bold; animation: pulse 1.5s infinite;">
+        🎁 View Our Amazon Registry
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with love by Daniel &amp; Makenzie ❤️</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
