@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daniel &amp; Makenzie's Wedding</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: url('bg-details.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #F5EFE6;
+      animation: zoomIn 30s ease-in-out infinite alternate;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #D2691E;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    .rsvp-button.secondary {
+      background-color: #4682B4;
+      margin-left: 1rem;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(210, 105, 30, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(210, 105, 30, 0); }
+    }
+    nav {
+      background: #F5EFE6;
+      padding: 1rem;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1F4E47;
+      font-weight: bold;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #1F4E47;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .menu.active { display: flex; }
+      body {
+        animation: none !important;
+        background-size: cover !important;
+      }
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(201, 169, 110, 0.3);
+      z-index: 2;
+      position: relative;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #F5EFE6;
+      color: #1F4E47;
+    }
+    @keyframes zoomIn {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 105%;
+      }
+    }
+</style>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.6);">
+<header>
+  <h1>Daniel &amp; Makenzie's Wedding</h1>
+  <p>October 11, 2025</p>
+  <a class="rsvp-button" href="rsvp.html">RSVP Here</a>
+</header>
+
+<nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Story</a>
+    <a href="details.html">Wedding Info</a>
+    <a href="photos.html">Upload Photos</a>
+    <a href="registry.html">Registry</a>
+    <a href="travel.html">Travel &amp; Lodging</a>
+    <a href="music.html">Music</a>
+    <a href="guestbook.html">Guestbook</a>
+  </div>
+</nav>
+
+<div class="timeline">
+  <div class="timeline-entry"><h2>August 1, 2023</h2><p>The night we first started talking, something just clicked. What began as a simple conversation quickly turned into an all-night exchange of stories, laughter, and little moments that drew us closer with every word. Looking back now, that night was the start of everything — a spark that lit the path to where we are today.</p></div>
+  <div class="timeline-entry"><h2>August 6, 2023</h2><p>Our first date! We laughed, took selfies, and made memories.</p><div class="photos"><img alt="August 6" src="photo1.png"/><img alt="August 6" src="photo2.png"/></div></div>
+  <div class="timeline-entry"><h2>August 22, 2023</h2><p>We made it official! I asked her to be my girlfriend.</p><div class="photos"><img alt="August 22" src="official.jpg"/></div></div>
+  <div class="timeline-entry"><h2>November 19, 2023</h2><p>Our first road trip together — we headed to Tennessee for Thanksgiving.</p><div class="photos"><img alt="Road trip" src="roadtrip.jpg"/></div></div>
+  <div class="timeline-entry"><h2>December 31, 2023</h2><p>Our first New Year's celebration together — ringing in 2024 side by side.</p><div class="photos"><img alt="New Year" src="newyear.jpg"/></div></div>
+  <div class="timeline-entry"><h2>August 3, 2024</h2><p>She said yes! That unforgettable moment marked the beginning of our forever—and the start of planning a lifetime together.</p><div class="photos"><img alt="Engagement" src="engagement.jpg"/></div></div>
+  <div class="timeline-entry"><h2>August 22, 2024</h2><p>One year together and still going strong.</p><div class="photos"><img alt="Anniversary" src="anniversary.jpg"/></div></div>
+  <div class="timeline-entry"><h2>October 23, 2024</h2><p>We went on our first hunt together — a whole new kind of adventure.</p><div class="photos"><img alt="Hunt" src="hunt1.jpg"/><img alt="Hunt" src="hunt2.jpg"/></div></div>
+  <div class="timeline-entry"><h2>November 19, 2024</h2><p>💙💙💙 We found out we’re having a baby! 💙💙💙</p><div class="photos"><img alt="Baby news" src="baby-news.jpg"/></div></div>
+  <div class="timeline-entry"><h2>February 19, 2025</h2><p>It’s a boy! Our hearts overflowed with joy the moment we found out—we couldn’t wait to meet our little miracle.</p><div class="photos"><img alt="It's a boy" src="its-a-boy.jpg"/></div></div>
+  <div class="timeline-entry"><h2>May 3, 2025</h2><p>Our Baby shower — surrounded by love, laughter, and so much excitement.</p><div class="photos"><img alt="Shower" src="shower1.jpg"/><img alt="Shower" src="shower2.jpg"/><img alt="Shower" src="shower3.jpg"/><img alt="Shower" src="shower4.jpg"/></div></div>
+  <div class="timeline-entry"><h2>More to come…</h2><p>Our story is just beginning 💕</p></div>
+</div>
+
+<footer>
+  <p>Made with love by Daniel &amp; Makenzie ❤️</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    if (hamburger && menu) {
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
