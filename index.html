@@ -47,6 +47,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap;
     }
     nav a {
       text-decoration: none;
@@ -95,11 +96,15 @@
       margin: 2rem auto;
       border-radius: 12px;
       overflow: hidden;
+      text-align: center;
     }
     .slide {
-      width: 100%;
-      border-radius: 12px;
+      max-width: 100%;
+      max-height: 500px;
       display: none;
+      margin: 0 auto;
+      border-radius: 12px;
+      object-fit: contain;
       transition: opacity 1s ease-in-out;
     }
     footer {
@@ -115,110 +120,112 @@
   </style>
 </head>
 <body>
-<header>
-  <h1>Daniel &amp; Makenzie's Wedding</h1>
-  <p>October 11, 2025</p>
-  <a class="rsvp-button pulse" href="rsvp.html">RSVP Here</a>
-  <a class="rsvp-button pulse secondary" href="story.html">Our Story</a>
-</header>
+  <header>
+    <h1>Daniel &amp; Makenzie's Wedding</h1>
+    <p>October 11, 2025</p>
+    <a class="rsvp-button pulse" href="rsvp.html">RSVP Here</a>
+    <a class="rsvp-button pulse secondary" href="story.html">Our Story</a>
+  </header>
 
-<nav>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-  <div class="menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="story.html">Our Story</a>
-    <a href="details.html">Wedding Info</a>
-    <a href="photos.html">Upload Photos</a>
-    <a href="registry.html">Registry</a>
-    <a href="travel.html">Travel & Lodging</a>
-    <a href="music.html">Music</a>
-    <a href="guestbook.html">Guestbook</a>
-  </div>
-</nav>
+  <nav>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="details.html">Wedding Info</a>
+      <a href="photos.html">Upload Photos</a>
+      <a href="registry.html">Registry</a>
+      <a href="travel.html">Travel & Lodging</a>
+      <a href="music.html">Music</a>
+      <a href="guestbook.html">Guestbook</a>
+    </div>
+  </nav>
 
-<section>
-  <h2>Welcome</h2>
-  <p style="font-size: 1.25rem;">
-    Welcome to our wedding website! We're so excited to share this journey with the people we love most.
-    This site is here to guide you through all the details — from our story, to travel tips, registry info, and how to RSVP.
-    We hope you'll enjoy exploring and getting a glimpse into the love, laughter, and life we've built together.
-    We can't wait to celebrate with you on our big day!
-  </p>
-</section>
+  <section>
+    <h2>Welcome</h2>
+    <p style="font-size: 1.25rem;">
+      Welcome to our wedding website! We're so excited to share this journey with the people we love most.
+      This site is here to guide you through all the details — from our story, to travel tips, registry info, and how to RSVP.
+      We hope you'll enjoy exploring and getting a glimpse into the love, laughter, and life we've built together.
+      We can't wait to celebrate with you on our big day!
+    </p>
+  </section>
 
-<section id="countdown-section" style="padding: 2rem 1rem;">
-  <h2 style="text-align:center; font-size: 2rem; margin-bottom: 1rem;">Countdown to I DO!! 💍</h2>
-  <div id="countdown" style="text-align: center; font-size: 2.5rem; font-weight: 500; letter-spacing: 2px;"></div>
-</section>
+  <section id="countdown-section" style="padding: 2rem 1rem;">
+    <h2 style="text-align:center; font-size: 2rem; margin-bottom: 1rem;">Countdown to I DO!! 💍</h2>
+    <div id="countdown" style="text-align: center; font-size: 2.5rem; font-weight: 500; letter-spacing: 2px;"></div>
+  </section>
 
-<section>
-  <div class="slideshow-container">
-    <img class="slide" src="slideshow1.jpg" style="display: block;">
-    <img class="slide" src="slideshow2.jpg">
-    <img class="slide" src="slideshow3.jpg">
-    <img class="slide" src="slideshow4.jpg">
-    <img class="slide" src="slideshow5.jpg">
-    <img class="slide" src="slideshow6.jpg">
-    <img class="slide" src="slideshow7.jpg">
-    <img class="slide" src="slideshow8.jpg">
-    <img class="slide" src="slideshow9.jpg">
-    <img class="slide" src="slideshow10.jpg">
-  </div>
-</section>
+  <section>
+    <div class="slideshow-container">
+      <img class="slide" src="slideshow1.jpg" style="display: block;">
+      <img class="slide" src="slideshow2.jpg">
+      <img class="slide" src="slideshow3.jpg">
+      <img class="slide" src="slideshow4.jpg">
+      <img class="slide" src="slideshow5.jpg">
+      <img class="slide" src="slideshow6.jpg">
+      <img class="slide" src="slideshow7.jpg">
+      <img class="slide" src="slideshow8.jpg">
+      <img class="slide" src="slideshow9.jpg">
+      <img class="slide" src="slideshow10.jpg">
+      <img class="slide" src="slideshow11.jpg">
+      <img class="slide" src="slideshow12.jpg">
+    </div>
+  </section>
 
-<footer>
-  <p>Made with love by Daniel &amp; Makenzie ❤️</p>
-</footer>
+  <footer>
+    <p>Made with love by Daniel &amp; Makenzie ❤️</p>
+  </footer>
 
-<!-- Hamburger Menu Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    if (hamburger && menu) {
-      hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
+  <!-- Hamburger Menu Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+
+  <!-- Countdown Script -->
+  <script>
+    const targetDate = new Date("October 11, 2025 14:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "🎉 It's Wedding Time! 🎉";
+        clearInterval(interval);
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `${days}d ${hrs}h ${mins}m ${secs}s`;
     }
-  });
-</script>
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+  </script>
 
-<!-- Countdown Script -->
-<script>
-  const targetDate = new Date("October 11, 2025 14:00:00").getTime();
-  const countdownEl = document.getElementById("countdown");
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-    if (distance < 0) {
-      countdownEl.innerHTML = "🎉 It's Wedding Time! 🎉";
-      clearInterval(interval);
-      return;
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    function showSlides() {
+      slides.forEach(s => s.style.display = "none");
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
     }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownEl.innerHTML = `${days}d ${hrs}h ${mins}m ${secs}s`;
-  }
-  updateCountdown();
-  const interval = setInterval(updateCountdown, 1000);
-</script>
-
-<!-- Slideshow Script -->
-<script>
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".slide");
-  function showSlides() {
-    slides.forEach(s => s.style.display = "none");
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000);
-  }
-  showSlides();
-</script>
+    showSlides();
+  </script>
 </body>
 </html>
