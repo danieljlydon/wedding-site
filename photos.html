@@ -138,14 +138,15 @@
       <input type="file" name="files" id="fileInput" multiple accept="image/*" style="margin: 1rem 0;" /><br>
       <button type="submit" style="padding:10px 20px;border:none;background:#D2691E;color:#fff;border-radius:6px;font-weight:bold;">Upload Photos</button>
       <p id="status" style="margin-top:1rem;"></p>
-
-      <!-- Unlock Uploads Button -->
-      <div id="unlockContainer" style="margin-top: 1.5rem;">
-        <button id="unlockPasswordBtn" style="padding:10px 20px;background:#D2691E;color:white;border:none;border-radius:6px;font-weight:bold;cursor:pointer;display:none;">
-          🔒 Unlock Uploads
-        </button>
-      </div>
     </form>
+
+    <!-- Unlock Button now OUTSIDE the form -->
+    <div id="unlockContainer" style="margin-top: 1.5rem; text-align:center;">
+      <button id="unlockPasswordBtn" style="padding:10px 20px;background:#D2691E;color:white;border:none;border-radius:6px;font-weight:bold;cursor:pointer;display:none;">
+        🔒 Unlock Uploads
+      </button>
+    </div>
+
     <div style="margin-top: 2rem; font-size: 2rem; color: #FFDAB9;">
       Countdown to the celebration:<br><span id="countdown" style="font-weight: bold;"></span>
     </div>
@@ -155,7 +156,6 @@
     <p>Made with love by Daniel &amp; Makenzie ❤️</p>
   </footer>
 
-  <!-- Countdown -->
   <script>
     function updateCountdown() {
       const targetDate = new Date("October 11, 2025 14:00:00 EST").getTime();
@@ -180,7 +180,6 @@
     window.onload = updateCountdown;
   </script>
 
-  <!-- Unlock Logic -->
   <script>
     const weddingTime = new Date("October 11, 2025 14:00:00 EST").getTime();
     const now = new Date().getTime();
@@ -201,13 +200,11 @@
         }
       };
     } else {
-      // After wedding time — unlock form by default
       form.classList.remove("disabled-form");
       if (unlockBtn) unlockBtn.remove();
     }
   </script>
 
-  <!-- Upload Handler -->
   <script>
     const statusElement = document.getElementById('status');
 
@@ -237,7 +234,6 @@
     });
   </script>
 
-  <!-- Mobile Menu -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const hamburger = document.getElementById('hamburger');
