@@ -138,6 +138,13 @@
       <input type="file" name="files" id="fileInput" multiple accept="image/*" style="margin: 1rem 0;" /><br>
       <button type="submit" style="padding:10px 20px;border:none;background:#D2691E;color:#fff;border-radius:6px;font-weight:bold;">Upload Photos</button>
       <p id="status" style="margin-top:1rem;"></p>
+
+      <!-- Unlock Uploads Button -->
+      <div id="unlockContainer" style="margin-top: 1.5rem;">
+        <button id="unlockPasswordBtn" style="padding:10px 20px;background:#D2691E;color:white;border:none;border-radius:6px;font-weight:bold;cursor:pointer;display:none;">
+          🔒 Unlock Uploads
+        </button>
+      </div>
     </form>
     <div style="margin-top: 2rem; font-size: 2rem; color: #FFDAB9;">
       Countdown to the celebration:<br><span id="countdown" style="font-weight: bold;"></span>
@@ -148,6 +155,7 @@
     <p>Made with love by Daniel &amp; Makenzie ❤️</p>
   </footer>
 
+  <!-- Countdown Script -->
   <script>
     function updateCountdown() {
       const targetDate = new Date("October 11, 2025 14:00:00 EST").getTime();
@@ -172,28 +180,16 @@
     window.onload = updateCountdown;
   </script>
 
+  <!-- Unlock Form with Password -->
   <script>
     const weddingTime = new Date("October 11, 2025 14:00:00 EST").getTime();
     const now = new Date().getTime();
     const form = document.getElementById('uploadForm');
-    const status = document.getElementById('status');
+    const unlockBtn = document.getElementById('unlockPasswordBtn');
 
     if (now < weddingTime) {
       form.classList.add("disabled-form");
-
-      const unlockBtn = document.createElement("button");
-      unlockBtn.textContent = "🔒 Unlock Uploads";
-      unlockBtn.id = "unlockPasswordBtn";
-      unlockBtn.style.padding = "10px 20px";
-      unlockBtn.style.marginTop = "1rem";
-      unlockBtn.style.backgroundColor = "#D2691E";
-      unlockBtn.style.color = "#fff";
-      unlockBtn.style.border = "none";
-      unlockBtn.style.borderRadius = "6px";
-      unlockBtn.style.fontWeight = "bold";
-      unlockBtn.style.cursor = "pointer";
-
-      form.parentNode.insertBefore(unlockBtn, status.nextSibling);
+      unlockBtn.style.display = "inline-block";
 
       unlockBtn.onclick = () => {
         const pw = prompt("Enter the password to enable uploads:");
@@ -207,6 +203,7 @@
     }
   </script>
 
+  <!-- Upload Script -->
   <script>
     const statusElement = document.getElementById('status');
 
@@ -236,6 +233,7 @@
     });
   </script>
 
+  <!-- Hamburger Menu Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const hamburger = document.getElementById('hamburger');
